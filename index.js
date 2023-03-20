@@ -112,8 +112,8 @@ app.put('/unidaddenegocios/:id',db.actualizarUnidadNegocios)
 app.delete('/unidaddenegocios/:id',db.eliminarUnidadNegocios)
 
 // metodos de usuarios
-app.get('/usuarios',db.getusuarios)
-app.get('/usuarios/:enumtrabajador',db.getusuariosPorId)
+app.get('/usuarios',db.getUsuarios)
+app.get('/usuarios/:numTrabajador',db.getUsuariosPorId)
 app.post('/usuarios',db.crearusuarios)
 app.put('/usuarios/:id',db.actualizarusuarios)
 app.delete('/usuarios/:id',db.eliminarusuarios)
