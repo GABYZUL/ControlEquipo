@@ -148,6 +148,11 @@ const getUsuarioPorId = (request, response) => {
 // };
 
 
+// CONSULTAS DE EQUIPO
+
+
+
+
 
 
 

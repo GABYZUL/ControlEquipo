@@ -1,6 +1,4 @@
-//PRIMERO QUE NADA, ACTUALICEN LA BDD EN EL pgadmin CON LA BASE DE DATOS DENTRO DE LA CARPETA LLAMADA "BDD"
 
-//EJECUTAN PRIMERO ESTO
 //npm install
 //npm install --save express
 //npm install --save pg
@@ -14,13 +12,6 @@
 //ng serve
 //node index.js
 
-//LUEGO PUEDEN ENTRAR COMO ADMIN CON ESTAS CREDENCIALES:
-//No. Trabajador: 20210081
-//Contraseña: contra123
-
-//NOTAAAAAAA IMPORTANTE: UNA VEZ DENTRO YA PUEDEN EJECUTAR JSON SERVER, PERO ANTES HAGAN CONTROL+C EN LA CONEXIÓN DE "node index.js", PORQUE SI NO TIRA ERROR, YA QUE LAS 2 ESTÁN EN EL PUERTO 3000
-//json-server --watch db.json
-//SOLO USENLO PARA PRUEBAS, LO IDEAL SERÍA SEGUIR TRABAJANDO CON POSTGRESQL CON EL "node index.js"
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -47,6 +38,7 @@ app.get('/',(request, response)=>{
 // app.post('/tipousuario',db.crearTipousuario)
 // app.put('/tipousuario/:id',db.actualizarTipousuario)
 // app.delete('/tipousuario/:id',db.eliminarTipousuario)
+
 
 // // metodos de equipos (Acumulados)
 // app.get('/acumulado',db.getEquipos)
