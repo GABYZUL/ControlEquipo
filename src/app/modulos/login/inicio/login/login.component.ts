@@ -12,7 +12,7 @@ export class LoginComponent {
 
   usuarios={
     IdOperador:0,
-    numTrabajador:'',
+    numtrabajador:'',
     name:'',
     contra:'',
     tipoUsuario:''
@@ -46,10 +46,10 @@ export class LoginComponent {
        this.loginPrd.ingresarAplicativo(this.myForm.value.usuarios).subscribe({
         next:(res)=>{
 
-          console.log(res[0].numTrabajador);
+          console.log(res[0].numtrabajador);
           console.log("CONSOLA")
 
-            if((this.myForm.value.usuarios==(res[0].numTrabajador)) && (this.myForm.value.password==(res[0].contra))){
+            if((this.myForm.value.usuarios==(res[0].numtrabajador)) && (this.myForm.value.password==(res[0].contra))){
               if(res[0].tipoUsuario=='Administrador'){
                 this.routerprd.navigateByUrl("/administrador/dashboard")
               }else if(res[0].tipoUsuario=='Visitante'){
