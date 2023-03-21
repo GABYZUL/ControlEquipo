@@ -27,7 +27,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 // fORMULARIO EN PARTE
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { NgChartsModule } from 'ng2-charts';
-import { DashboardComponent } from './modulos/principal/paginas/admin/dashboard/dashboard.component';
+
 
 
 // CONTROL EQUIPOS DIALOGOS

@@ -14,7 +14,7 @@
           <img src="./assets/dist/img/admin.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a class="d-block">Jehú Rodríguez</a>
+          <a class="d-block">Empleado</a>
         </div>
       </div>
 
@@ -23,49 +23,30 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
           <li class="nav-item">
-            <a routerLink="dashboard" class="nav-link">
+            <a routerLink="equipos" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Equipos
               </p>
             </a>
           </li>
-
-          <li class="nav-item" *ngFor="let item of menuItems">
-            <a href="#" class="nav-link">
-              <i class="{{item.icono}}"></i>
-              <p clas="ml-2">
-                {{item.titulo}}
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item" *ngFor="let subMenu of item.subMenu">
-                <a [routerLink]="subMenu.url" class="nav-link" style="cursor: pointer;">
-                  <i class="{{subMenu.icono}}"></i>
-                  <p class="ml-2">{{subMenu.titulo}}</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
           <li class="nav-item">
-            <a routerLink="manpower" class="nav-link">
-              <i class="nav-icon fa-solid fa-users"></i>
+            <a routerLink="valorequipos" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Manpower
+                Valor equipos
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="checklist" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                checklist
               </p>
             </a>
           </li>
 
-          <li class="nav-item">
-            <a routerLink="kpis" class="nav-link">
-              <i class="nav-icon fa-solid fa-chart-simple"></i>
-              <p>
-                KPI's
-              </p>
-            </a>
-          </li>
           <li class="nav-item">
             <a routerLink="" class="nav-link">
               <i class="nav-icon fa-solid fa-right-from-bracket"></i>

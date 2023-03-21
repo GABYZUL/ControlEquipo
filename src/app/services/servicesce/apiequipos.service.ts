@@ -18,8 +18,14 @@ export class ApiequiposService {
   getEquipo(){
     return this.http.get<any>("http://localhost:3000/acumulado/");
   }
+  deleteEquipo(id: number){
+    return this.http.delete<any>("http://localhost:3000/acumulado/"+id);
+  }
+  putEquipo(data: any, id: number){
+    return this.http.put<any>("http://localhost:3000/acumulado/"+id, data);
+  }
   /* getAlEquipos */
-  
+
   // getAll(): Observable<Tutorial[]> {
   //   return this.http.get<Tutorial[]>(baseUrl);
   // }

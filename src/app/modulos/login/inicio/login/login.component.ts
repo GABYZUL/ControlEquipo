@@ -51,9 +51,9 @@ export class LoginComponent {
 
             if((this.myForm.value.usuarios==(res[0].numtrabajador)) && (this.myForm.value.password==(res[0].contra))){
               if(res[0].tipoUsuario=='Administrador'){
-                this.routerprd.navigateByUrl("/administrador/dashboard")
+                this.routerprd.navigateByUrl("/administrador/equipos")
               }else if(res[0].tipoUsuario=='Visitante'){
-                this.routerprd.navigateByUrl("/visitante/kpis")
+                this.routerprd.navigateByUrl("/visitante/equipos")
               }
             }else{
               alert("Credenciales incorrectas")

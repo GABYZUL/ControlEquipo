@@ -1,18 +1,19 @@
 {
-    "acumulado": [
-        {
-            "noeco": 2,
-            "tipomaquina": "json-server",
-            "idunidad": "1",
-            "modelo": "typicode",
-            "anio": "typicode",
-            "serie": "typicode",
-            "motor": "465",
-            "seriemotor": "6467",
-            "estatus": "Operativo",
-            "atencion": "Manteniemiento",
-            "costoPeso": "3546",
-            "costoDolares": "68709"
-        }
-    ]
+  "acumulado": [
+    {
+      "tipomaquina": "1",
+      "noeco": "dasdsa",
+      "idunidad": "unidad2",
+      "modelo": "sdadw",
+      "anio": 34234,
+      "serie": 47,
+      "motor": "dsf",
+      "seriemotor": 32423,
+      "estatus": "2",
+      "atencion": "fwefdef",
+      "costoPesos": "fsd23542342",
+      "costoDolares": "42342342",
+      "id": 3
+    }
+  ]
 }

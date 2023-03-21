@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Detalles horómetro</h1>
+<div mat-dialog-content>
+    <form [formGroup]="EquipoForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Unidad de Negocio</mat-label>
+            <input formControlName="UnidadNegocio" type="text" matInput placeholder="0">
+            </mat-form-field>
+    
+          <mat-form-field appearance="outline">
+            <mat-label>Año</mat-label>
+            <input formControlName="Año" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br>
+    
+          <mat-form-field appearance="outline">
+            <mat-label>Atencion</mat-label>
+            <input formControlName="Atencion" type="text" matInput placeholder="0">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+              <mat-label>Estatus</mat-label>
+              <input formControlName="Estatus" type="text" matInput placeholder="0">
+            </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+
+    <button class="btn btn-outline-danger" mat-dialog-close>Cerrar</button>
+
+</div>

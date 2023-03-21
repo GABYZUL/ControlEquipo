@@ -1,6 +1,11 @@
-import { DashboardComponent } from './paginas/admin/dashboard/dashboard.component';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ValorequiposComponent } from './paginas/admin/valorequipos/valorequipos.component';
+import { DialogagregarequipoComponent } from './paginas/admin/equipos/elementos/dialogagregarequipo/dialogagregarequipo.component';
+import { DialogdetalleComponent } from './paginas/admin/equipos/elementos/dialogdetalle/dialogdetalle/dialogdetalle.component';
+import { DialogeditarComponent } from './paginas/admin/equipos/elementos/dialogeditar/dialogeditar/dialogeditar.component';
+import { EquiposComponent } from './paginas/admin/equipos/equipos.component';
 
 import { RouterModule } from '@angular/router';
 import { InterfazModule } from 'src/app/interfaz/privado/menu/menu.module';
@@ -12,7 +17,7 @@ import { PrincipalComponent } from './principal.component';
 //import { HorometrosComponent } from './horometros/horometros.component';
 //import { PreventivosComponent } from './preventivos/preventivos.component';
 //import { SemanalesComponent } from './semanales/semanales.component';
-import { BitacoraComponent } from './paginas/admin/bitacora/bitacora.component';
+
 //import { ManpowerComponent } from './manpower/manpower.component';
 //import { KpisComponent } from './kpis/kpis.component';
 //import { DialoghoroRegistrarComponent } from './horometros/elementos/dialoghoro-registrar/dialoghoro-registrar.component';
@@ -45,30 +50,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 //import { DetallesBitacoraComponent } from './bitacora/elementos/detalles-bitacora/detalles-bitacora.component';
 import {MatCardModule} from '@angular/material/card';
 import { NgChartsModule } from 'ng2-charts';
-import { HorometrosComponent } from './paginas/admin/horometros/horometros.component';
-import { PreventivosComponent } from './paginas/admin/preventivos/preventivos.component';
-import { SemanalesComponent } from './paginas/admin/semanales/semanales.component';
-import { ManpowerComponent } from './paginas/admin/manpower/manpower.component';
-import { KpisComponent } from './paginas/admin/kpis/kpis.component';
-import { BitacoraFormComponent } from './paginas/admin/bitacora/elementos/bitacoraform/bitacoraform.component';
-import { DetallesBitacoraComponent } from './paginas/admin/bitacora/elementos/bitacoradetalles/bitacoradetalles.component';
-import { DialoghoroDetallesComponent } from './paginas/admin/horometros/elementos/dialoghoro-detalles/dialoghoro-detalles.component';
-import { DialoghoroEditarComponent } from './paginas/admin/horometros/elementos/dialoghoro-editar/dialoghoro-editar.component';
-import { DialoghoroRegistrarComponent } from './paginas/admin/horometros/elementos/dialoghoro-registrar/dialoghoro-registrar.component';
-import { DetallesPreventivosComponent } from './paginas/admin/preventivos/elementos/detalles-preventivos/detalles-preventivos.component';
-import { PreventivosFormComponent } from './paginas/admin/preventivos/elementos/preventivos-form/preventivos-form.component';
-import { PrimerMantComponent } from './paginas/admin/preventivos/elementos/primer-mant/primer-mant.component';
-import { DetallesSemanalesComponent } from './paginas/admin/semanales/elementos/detalles-semanales/detalles-semanales.component';
-import { SemanalesFormComponent } from './paginas/admin/semanales/elementos/semanales-form/semanales-form.component';
-import { ManpowerDetallesComponent } from './paginas/admin/manpower/elementos/manpower-detalles/manpower-detalles.component';
-import { ManpowerFormComponent } from './paginas/admin/manpower/elementos/manpower-form/manpower-form.component';
+
 //DIALOGS EQUIPOS
 //import { DialogagregarequipoComponent } from './equipos/elementos/dialogagregarequipo/dialogagregarequipo.component';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent,
     PrincipalComponent,
     //EquiposComponent,
     //ValorequiposComponent,
@@ -77,24 +65,7 @@ import { ManpowerFormComponent } from './paginas/admin/manpower/elementos/manpow
     //HorometrosComponent,
     //PreventivosComponent,
     //SemanalesComponent,
-    BitacoraComponent,
-    HorometrosComponent,
-    PreventivosComponent,
-    SemanalesComponent,
-    ManpowerComponent,
-    KpisComponent,
-    BitacoraFormComponent,
-    DetallesBitacoraComponent,
-    DialoghoroDetallesComponent,
-    DialoghoroEditarComponent,
-    DialoghoroRegistrarComponent,
-    DetallesPreventivosComponent,
-    PreventivosFormComponent,
-    PrimerMantComponent,
-    DetallesSemanalesComponent,
-    SemanalesFormComponent,
-    ManpowerDetallesComponent,
-    ManpowerFormComponent,
+
     //ManpowerComponent,
     //KpisComponent,
     //DialoghoroRegistrarComponent,
@@ -109,6 +80,11 @@ import { ManpowerFormComponent } from './paginas/admin/manpower/elementos/manpow
     //BitacoraFormComponent,
     //DetallesBitacoraComponent,
     //DialogagregarequipoComponent
+    EquiposComponent,
+    DialogagregarequipoComponent,
+    DialogdetalleComponent,
+    DialogeditarComponent,
+    ValorequiposComponent
   ],
   imports: [
     CommonModule,
@@ -134,8 +110,11 @@ import { ManpowerFormComponent } from './paginas/admin/manpower/elementos/manpow
     MatCardModule
   ],
   exports: [
-    DashboardComponent,
     PrincipalComponent,
+    EquiposComponent,
+    DialogagregarequipoComponent,
+    DialogdetalleComponent,
+    DialogeditarComponent
     //EquiposComponent,
     //ValorequiposComponent,
     //ChecklistComponent,
@@ -143,13 +122,12 @@ import { ManpowerFormComponent } from './paginas/admin/manpower/elementos/manpow
     //HorometrosComponent,
     //PreventivosComponent,
     //SemanalesComponent,
-    BitacoraComponent,
     //ManpowerComponent,
     //KpisComponent,
     //DialoghoroRegistrarComponent,
     //DialoghoroDetallesComponent,
     //DialogagregarequipoComponent
-    
+
 
 
   ]
