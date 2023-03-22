@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SidebarService } from '../../servicios/sidebar.service';
+import { AutentificacionService } from 'src/app/autentificacion/autentificacion.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,12 +9,15 @@ import { SidebarService } from '../../servicios/sidebar.service';
 })
 export class SidebarComponent implements OnInit {
 
-  // menuItems?:any[];
-
-  // constructor(private sideBarService: SidebarService, private router: Router) {
-  //   this.menuItems = this.sideBarService.menu;
-  //  }
+ 
+  public objetounico = {};
+  constructor(private aut:AutentificacionService, private router:Router){}
 
   ngOnInit(): void {
+    throw new Error('Method not implemented.')
+  }
+  public cerrarSesion(){
+    sessionStorage.clear();
+    this.router.navigateByUrl("/publico/sesiones/login");
   }
 }

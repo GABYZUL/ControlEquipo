@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import {FormBuilder,FormGroup, Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { AutentificacionService } from 'src/app/autentificacion/autentificacion.service';
-
+import * as CryptoJS from 'crypto-js'
+// import * as CryptoJS f
+//npm install --save crypto-js @types/crypto-js  
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +12,7 @@ import { AutentificacionService } from 'src/app/autentificacion/autentificacion.
 })
 export class LoginComponent {
 
-  usuarios={
+  usuario={
     IdOperador:0,
     numtrabajador:'',
     name:'',
@@ -25,47 +27,89 @@ export class LoginComponent {
 
   ngOnInit():void{
     this.myForm = this.createMyForm();
-
   }
 
   private createMyForm():FormGroup{
     return this.fb.group({
-      usuarios:['',[Validators.required]],
+      usuario:['',[Validators.required]],
       password:['',[Validators.required]]
     });
   }
 
   public submitFormulario(){
-    if(this.myForm.invalid){
-      Object.values(this.myForm.controls).forEach(control=>{
-        control.markAllAsTouched();
-      });
-      return;
-    }
+    if(this.myForm.valid){
+      const {usuario, password} = this.myForm.value;
 
-       this.loginPrd.ingresarAplicativo(this.myForm.value.usuarios).subscribe({
+      this.loginPrd.ingresarAplicativo(usuario).subscribe({
         next:(res)=>{
+          const [userData] = res;
+          
+          if(usuario == userData.numtrabajador && password == userData.contra){    
+            const tokenData = {
+              usuario: userData.numtrabajador,
+              tipo: userData.tipoUsuario
+            };
+            const token = this.signToken(tokenData, '');
+            console.log('token', token);
+            sessionStorage.setItem('token', JSON.stringify(token));
 
-          console.log(res[0].numtrabajador);
-          console.log("CONSOLA")
-
-            if((this.myForm.value.usuarios==(res[0].numtrabajador)) && (this.myForm.value.password==(res[0].contra))){
-              if(res[0].tipoUsuario=='Administrador'){
-                this.routerprd.navigateByUrl("/administrador/equipos")
-              }else if(res[0].tipoUsuario=='Visitante'){
-                this.routerprd.navigateByUrl("/visitante/equipos")
-              }
-            }else{
-              alert("Credenciales incorrectas")
-            }
+            this.routerprd.navigateByUrl("/administrador/equipos")
+          }else{
+            alert("Usuario o contraseña incorrectos");
+            console.log("VIENTOS")
+          }
         },
         error:(err)=>{
-          alert("usuarios no encontrado");
+          alert("Usuario no encontrado");
         }
-       }
-       )
-
+      })
     }
+  }
+
+    
+
+  base64url(source:any){
+    let encodedSource = CryptoJS.enc.Base64.stringify(source);
+    encodedSource = encodedSource.replace(/=+$/, '');
+    encodedSource = encodedSource.replace(/\+/g, '-');
+    encodedSource = encodedSource.replace(/\//g, '_');
+    return encodedSource;
+  }
+
+  encodeToken(payload:any){
+    var header = {
+      "alg": "HS256",
+      "typ": "JWT"
+    };
+    var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
+    var encodedHeader = this.base64url(stringifiedHeader);
+    var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify(payload));
+    var encodedData = this.base64url(stringifiedData);
+
+    var token = encodedHeader + "." + encodedData;
+    return token;
+  }
+
+  signToken(payload:any, key:string){
+    var secret = key;
+    let token:any = this.encodeToken(payload);
+
+    var signature:any = CryptoJS.HmacSHA256(token, secret);
+    signature = this.base64url(signature);
+
+    var signedToken = token + "." + signature;
+    return signedToken;
+  }
+
+
+  handleCredentialResponse(response:any){
+    console.log(response);
+    console.log(this.routerprd);
+    if(response.credential){
+      sessionStorage.setItem("token",response.credential);
+      document.location.href = "sesiones/administrador/equipos";
+    }
+  }
 
   public get f():any{
     return this.myForm.controls;

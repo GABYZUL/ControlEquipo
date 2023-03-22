@@ -19,4 +19,7 @@ export class AutentificacionService {
   public habilitarlogeo() {
     return this.ingresar;
   }
+  public getAutenticationByToken(){
+    return sessionStorage.getItem("token");
+  }
 }
