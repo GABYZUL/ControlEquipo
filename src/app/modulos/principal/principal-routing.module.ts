@@ -10,6 +10,7 @@ import { ValorequiposComponent } from './paginas/admin/valorequipos/valorequipos
 import { ChecklistComponent } from './paginas/admin/checklist/checklist.component';
 import { PrincipalComponent } from './principal.component';
 import { LoginComponent } from '../login/inicio/login/login.component';
+import { DisponibilidaddiariaComponent } from './paginas/admin/disponibilidaddiaria/disponibilidaddiaria.component';
 
 const rutas: Routes = [
   {path:'', component:LoginComponent},
@@ -18,7 +19,9 @@ const rutas: Routes = [
     {path:'equipos', component: EquiposComponent},
     {path:'administrador', component: EquiposComponent},
     {path:'valorequipos', component: ValorequiposComponent},
-    {path:'checklist', component: ChecklistComponent}
+    {path:'checklist', component: ChecklistComponent},
+    {path:'disponibilidaddiaria', component: DisponibilidaddiariaComponent}
+
     //{path:'equipos', component: EquiposComponent},
     //{path:'valorequipos', component: ValorequiposComponent},
     //{path:'checklist', component:ChecklistComponent},

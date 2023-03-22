@@ -6,7 +6,7 @@ import { DialogagregarequipoComponent } from './paginas/admin/equipos/elementos/
 import { DialogdetalleComponent } from './paginas/admin/equipos/elementos/dialogdetalle/dialogdetalle/dialogdetalle.component';
 import { DialogeditarComponent } from './paginas/admin/equipos/elementos/dialogeditar/dialogeditar/dialogeditar.component';
 import { EquiposComponent } from './paginas/admin/equipos/equipos.component';
-
+import { DisponibilidaddiariaComponent } from './paginas/admin/disponibilidaddiaria/disponibilidaddiaria.component';
 import { RouterModule } from '@angular/router';
 import { InterfazModule } from 'src/app/interfaz/privado/menu/menu.module';
 import { PrincipalComponent } from './principal.component';
@@ -22,6 +22,7 @@ import { PrincipalComponent } from './principal.component';
 //import { KpisComponent } from './kpis/kpis.component';
 //import { DialoghoroRegistrarComponent } from './horometros/elementos/dialoghoro-registrar/dialoghoro-registrar.component';
 //import { DialoghoroDetallesComponent } from './horometros/elementos/dialoghoro-detalles/dialoghoro-detalles.component';
+import { VermasComponent } from './paginas/admin/disponibilidaddiaria/elementos/vermas/vermas.component';
 
 //IMPORTS DE FORMS
 import  {MatFormFieldModule } from '@angular/material/form-field';
@@ -80,6 +81,8 @@ import { NgChartsModule } from 'ng2-charts';
     //BitacoraFormComponent,
     //DetallesBitacoraComponent,
     //DialogagregarequipoComponent
+    VermasComponent,
+    DisponibilidaddiariaComponent,
     EquiposComponent,
     DialogagregarequipoComponent,
     DialogdetalleComponent,
@@ -114,7 +117,9 @@ import { NgChartsModule } from 'ng2-charts';
     EquiposComponent,
     DialogagregarequipoComponent,
     DialogdetalleComponent,
-    DialogeditarComponent
+    DialogeditarComponent,
+    DisponibilidaddiariaComponent,
+    VermasComponent
     //EquiposComponent,
     //ValorequiposComponent,
     //ChecklistComponent,

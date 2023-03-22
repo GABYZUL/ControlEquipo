@@ -53,4 +53,9 @@ export class ApiequiposService {
   // findByTitle(title: any): Observable<Tutorial[]> {
   //   return this.http.get<Tutorial[]>(`${baseUrl}?title=${title}`);
   // }
+
+  // DISPONIBILIDAD
+  getDisponibilidad(){
+    return this.http.get<any>("http://localhost:3000/disponibilidad/");
+  }
 }
