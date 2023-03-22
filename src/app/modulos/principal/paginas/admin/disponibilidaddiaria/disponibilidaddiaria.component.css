@@ -1,24 +1,9 @@
-#button-header {
-  margin-top: 5px;
-  width: 200px;
-  height: 50px;
-  left: 1030px;
-  position: absolute;
-  margin-bottom: 20px;
-  color: white;
-  font-size: 13px;
-  border-radius: 10px;
-  background-color: #3b8c88;
-  border: none;
-}
-#text-header {
-}
 
 #filtroI {
   width: 420px;
   height: 60px;
   margin-top: -5px;
-  border: 3px solid #002c46;
+  border: 3px solid #002C46;
   position: absolute;
 }
 
@@ -27,18 +12,22 @@
   margin-top: -30px;
   padding: 0;
   list-style-type: none;
-  margin-left: 5px;
+ margin-left: 5px;
+
 }
 
-#icons {
-  margin-top: 10px;
-  margin-left: 10px;
-  position: absolute;
+#icons{
+margin-top: 10px;
+margin-left: 10px;
+position: absolute;
 }
+
+
 
 #menu-header li {
   float: left;
 }
+
 
 /* DIVS muestra info principal */
 #item1 {
@@ -48,7 +37,11 @@
   color: white;
   font-size: 13px;
   border-radius: 10px;
-  background-color: #a92727;
+  background-color: #D54B1A;
+
+
+
+
 }
 #item2 {
   width: 200px;
@@ -58,18 +51,29 @@
   font-size: 13px;
   border-radius: 10px;
   margin-left: 100px;
-  background-color: #d54b1a;
+  background-color: #3f8854;
 }
-label {
+#item3 {
+  width: 200px;
+  height: 60px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 13px;
+  border-radius: 10px;
+  margin-left: 100px;
+  background-color: #A92727;
+}
+
+label{
   margin-top: 30px;
   position: absolute;
   font-size: 20px;
 }
 
-span {
+span{
   margin-left: 60px;
 }
-#itemsresumen {
+#itemsresumen{
   display: inline-flex;
   align-items: start;
 }
