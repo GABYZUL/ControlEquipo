@@ -1,4 +1,4 @@
-<head>
+<!-- <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -31,4 +31,34 @@
       </div>
     </div>
   </div>
-</body>
+</body> -->
+<img class="puerto" src="../../../../../assets/dist/img/puerto.jpg">
+<div class="container">
+  <div class="screen">
+    <div class="screen__content">
+      <label class="titulo">Bienvenido</label><br>
+      <form class="login" [formGroup]="myForm" (ngSubmit)="submitFormulario()">
+        <div class="login__field">
+          <svg class="login__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+          <input formControlName="usuarios" [class.is-invalid]="f.usuarios.errors && f.usuarios.touched" type="email"
+            class="login__input" id="exampleFormControlInput1" placeholder="No. trabajador">
+        </div>
+        <div class="login__field">
+          <svg class="login__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>
+                    <input formControlName="password" [class.is-invalid]="f.password.errors && f.password.touched" type="password"
+            class="login__input" id="exampleFormControlInput2" placeholder="Contraseña">
+        </div>
+        <button class="button login__submit">
+          <span class="button__text">Ingresar</span>
+          <svg style="width: 30px; height: 30px; margin-left: 100px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+        </button>
+      </form>
+    </div>
+    <div class="screen__background">
+      <span class="screen__background__shape screen__background__shape4"></span>
+      <span class="screen__background__shape screen__background__shape3"></span>
+      <span class="screen__background__shape screen__background__shape2"></span>
+      <span class="screen__background__shape screen__background__shape1"></span>
+    </div>
+  </div>
+</div>
