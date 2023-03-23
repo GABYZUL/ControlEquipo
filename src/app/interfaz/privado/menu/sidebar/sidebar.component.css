@@ -1,0 +1,19 @@
+#bCerrarSesion{
+border: none;
+left: -10px;
+position: relative;
+width: 220px;
+height: 40px;
+text-align: center;
+}
+#iCerrarSesion{
+  position: absolute;
+  top: 10px;
+  left: 12px;
+
+}
+#tCerrarSesion{
+  position: absolute;
+  margin-left: -50px;
+  margin-top: -13px;
+}

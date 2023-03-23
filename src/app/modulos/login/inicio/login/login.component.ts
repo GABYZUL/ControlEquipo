@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import {FormBuilder,FormGroup, Validators} from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AutentificacionService } from 'src/app/autentificacion/autentificacion.service';
-import * as CryptoJS from 'crypto-js'
-// import * as CryptoJS f
-//npm install --save crypto-js @types/crypto-js  
+import * as CryptoJS from 'crypto-js';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,39 +11,39 @@ import * as CryptoJS from 'crypto-js'
 })
 export class LoginComponent {
 
-  usuario={
-    IdOperador:0,
-    numtrabajador:'',
-    name:'',
-    contra:'',
-    tipoUsuario:''
+  usuario = {
+    IdOperador: 0,
+    numtrabajador: '',
+    name: '',
+    contra: '',
+    tipoUsuario: ''
   }
 
-  public myForm!:FormGroup;
+  public myForm!: FormGroup;
 
-  constructor(private fb:FormBuilder, private loginPrd:AutentificacionService,
-    private routerprd:Router){}
+  constructor(private fb: FormBuilder, private loginPrd: AutentificacionService,
+    private routerprd: Router) { }
 
-  ngOnInit():void{
+  ngOnInit(): void {
     this.myForm = this.createMyForm();
   }
 
-  private createMyForm():FormGroup{
+  private createMyForm(): FormGroup {
     return this.fb.group({
-      usuario:['',[Validators.required]],
-      password:['',[Validators.required]]
+      usuario: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
 
-  public submitFormulario(){
-    if(this.myForm.valid){
-      const {usuario, password} = this.myForm.value;
+  public submitFormulario() {
+    if (this.myForm.valid) {
+      const { usuario, password } = this.myForm.value;
 
       this.loginPrd.ingresarAplicativo(usuario).subscribe({
-        next:(res)=>{
+        next: (res) => {
           const [userData] = res;
-          
-          if(usuario == userData.numtrabajador && password == userData.contra){    
+
+          if (usuario == userData.numtrabajador && password == userData.contra) {
             const tokenData = {
               usuario: userData.numtrabajador,
               tipo: userData.tipoUsuario
@@ -54,21 +53,21 @@ export class LoginComponent {
             sessionStorage.setItem('token', JSON.stringify(token));
 
             this.routerprd.navigateByUrl("/administrador/equipos")
-          }else{
+          } else {
             alert("Usuario o contraseña incorrectos");
             console.log("VIENTOS")
           }
         },
-        error:(err)=>{
+        error: (err) => {
           alert("Usuario no encontrado");
         }
       })
     }
   }
 
-    
 
-  base64url(source:any){
+
+  base64url(source: any) {
     let encodedSource = CryptoJS.enc.Base64.stringify(source);
     encodedSource = encodedSource.replace(/=+$/, '');
     encodedSource = encodedSource.replace(/\+/g, '-');
@@ -76,7 +75,7 @@ export class LoginComponent {
     return encodedSource;
   }
 
-  encodeToken(payload:any){
+  encodeToken(payload: any) {
     var header = {
       "alg": "HS256",
       "typ": "JWT"
@@ -90,11 +89,11 @@ export class LoginComponent {
     return token;
   }
 
-  signToken(payload:any, key:string){
+  signToken(payload: any, key: string) {
     var secret = key;
-    let token:any = this.encodeToken(payload);
+    let token: any = this.encodeToken(payload);
 
-    var signature:any = CryptoJS.HmacSHA256(token, secret);
+    var signature: any = CryptoJS.HmacSHA256(token, secret);
     signature = this.base64url(signature);
 
     var signedToken = token + "." + signature;
@@ -102,16 +101,16 @@ export class LoginComponent {
   }
 
 
-  handleCredentialResponse(response:any){
+  handleCredentialResponse(response: any) {
     console.log(response);
     console.log(this.routerprd);
-    if(response.credential){
-      sessionStorage.setItem("token",response.credential);
+    if (response.credential) {
+      sessionStorage.setItem("token", response.credential);
       document.location.href = "sesiones/administrador/equipos";
     }
   }
 
-  public get f():any{
+  public get f(): any {
     return this.myForm.controls;
   }
 }

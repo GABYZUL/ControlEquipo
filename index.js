@@ -5,6 +5,8 @@
 //npm install --save pg-hstore
 //npm install --save body-parser
 //npm install cors --save
+//npm install crypto-js
+//npm i --save crypto-js @types/crypto-js
 
 //REINICIEN VISUAL STUDIO CODE
 
