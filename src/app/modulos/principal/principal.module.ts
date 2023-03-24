@@ -10,7 +10,7 @@ import { DisponibilidaddiariaComponent } from './paginas/admin/disponibilidaddia
 import { RouterModule } from '@angular/router';
 import { InterfazModule } from 'src/app/interfaz/privado/menu/menu.module';
 import { PrincipalComponent } from './principal.component';
-
+import { ChecklistComponent } from './paginas/admin/checklist/checklist.component';
 import { VermasComponent } from './paginas/admin/disponibilidaddiaria/elementos/vermas/vermas.component';
 
 //IMPORTS DE FORMS
@@ -74,6 +74,7 @@ import { DialogdetallevisitanteComponent } from './paginas/visitante/equiposvisi
     ValorequiposComponent,
     EquiposvisitanteComponent,
     DialogdetallevisitanteComponent,
+    ChecklistComponent
   ],
   imports: [
     CommonModule,
@@ -105,7 +106,8 @@ import { DialogdetallevisitanteComponent } from './paginas/visitante/equiposvisi
     DialogdetalleComponent,
     DialogeditarComponent,
     DisponibilidaddiariaComponent,
-    VermasComponent
+    VermasComponent,
+    ChecklistComponent
     //EquiposComponent,
     //ValorequiposComponent,
     //ChecklistComponent,

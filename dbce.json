@@ -25,6 +25,58 @@
       "fechadeSCOC": "2023-03-23T06:00:00.000Z",
       "unidad": "D.manzanillo"
     }
-  ]
+  ],
+  "checkList": [
+    {
+        "noEquipo": 1,
+        "tipoEquipo": "Chasis",
+        "status": "Activo",
+        "areaCL": "SUKARGA",
+        "horoInical": 0,
+        "horoFinal": 0,
+        "operador": "",
+        "iniMediDiesel": 1,
+        "finMediDiesel": 1,
+
+        "posicion1txt": "",
+        "posicion2txt": "",
+        "posicion3txt": "",
+        "posicion4txt": "",
+        "Maceitetxt": "",
+        "Mrefigrerantetxt": "",
+        "Mbandastxt": "",
+        "MfugaAceitetxt": "",
+        "Mmanguerastxt": "",
+        "MfiltroAiretxt":"",
+        "TCfugatxt":"",
+        "SHmanguerastxt":"",
+        "SHaceitetxt":"",
+        "Ecucharontxt":"",
+        "Epernostxt":"",
+        "Eengrasadotxt":"",
+        "EpresAceiteMtxt":"",
+        "Etemperaturatxt":"",
+        "Ehorometrotxt":"",
+        "CespejoLattxt":"",
+        "CcinturonSegtxt":"",
+        "Cextintortxt":"",
+        "Caatxt":"",
+        "TnivelAceitetxt":"",
+        "Taceitetxt":"",
+        "SElimpiadorestxt":"",
+        "SElucestxt":"",
+        "SEalarmatxt":"",
+        "SEclaxontxt":"",
+        "SEbateriatxt":"",
+        "SEcableadotxt":"",
+        "SEtapatxt":"",
+        "FfrenosServiciostxt":"",
+        "Festacionamientotxt":"",
+        "Dvolantestxt":"",
+        "Dpedalestxt":"",
+        "Ddirecciontxt":"",
+        "estadoUnidadtxt":""
+    }
+]
 
 }

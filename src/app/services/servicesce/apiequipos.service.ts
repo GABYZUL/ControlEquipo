@@ -59,4 +59,8 @@ export class ApiequiposService {
   getDisponibilidad(){
     return this.http.get<any>("http://localhost:3000/disponibilidad/");
   }
+
+  getcheckList(){
+    return this.http.get<any>("http://localhost:3000/checkList/");
+  }
 }
