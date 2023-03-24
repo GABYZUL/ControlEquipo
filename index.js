@@ -43,13 +43,12 @@ app.get('/',(request, response)=>{
 
 
 // // metodos de equipos (Acumulados)
-// app.get('/acumulado',db.getEquipos)
-// app.get('/acumulado/:id',db.getEquipoPorId)
-// app.post('/acumulado',db.crearEquipo)
-// app.put('/acumulado/:id',db.actualizarEquipo)
-// app.delete('/acumulado/:id',db.eliminarEquipo)
 
-
+app.get('/acumulado', db.getEquipo)
+app.get('/acumulado/:id', db.getEquipoById)
+app.post('/acumulado', db.crearEquipo)
+app.put('/acumulado/:id',db.actualizarEquipo)
+app.delete('/acumulado/:id', db.eliminarEquipo)
 // metodos de usuario
 app.get('/usuarios',db.getUsuario)
 app.get('/usuarios/:numtrabajador',db.getUsuarioPorId)

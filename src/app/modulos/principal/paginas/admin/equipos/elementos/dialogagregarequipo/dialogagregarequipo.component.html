@@ -4,7 +4,7 @@
         <br>
         <mat-form-field appearance="outline">
             <mat-label>Tipo de equipo</mat-label>
-            <mat-select formControlName="tipomaquina">
+            <mat-select formControlName="tipoequipo">
                 <mat-option value="1">Unidad 1</mat-option>
                 <mat-option value="2">Unidad 2</mat-option>
                 <mat-option value="3">Unidad 3</mat-option>
@@ -17,7 +17,7 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Unidad</mat-label>
-            <mat-select formControlName="idunidad">
+            <mat-select formControlName="unidad">
                 <mat-option value="unidad1">Unidad 1</mat-option>
                 <mat-option value="unidad2">Unidad 2</mat-option>
                 <mat-option value="unidad3">Unidad 3</mat-option>
@@ -33,7 +33,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Numero de serie</mat-label>
-            <input formControlName="serie" type="number" matInput placeholder="0">
+            <input formControlName="numeroserie" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Motor</mat-label>
@@ -57,11 +57,11 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en pesos</mat-label>
-            <input formControlName="costoPesos" type="text" matInput placeholder="0">
+            <input formControlName="costopesos" type="text" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en dolares</mat-label>
-            <input formControlName="costoDolares" type="text" matInput placeholder="0">
+            <input formControlName="costodolares" type="text" matInput placeholder="0">
         </mat-form-field>
     </form>
 </div>
@@ -69,6 +69,6 @@
 <div mat-dialog-action [align]="'end'">
 
     <button class="btn btn-outline-danger" mat-dialog-close>Cerrar</button>
-    <button style="margin-left: 8px;"  (click)="addEquipo()" class="btn btn-outline-success">{{actionBtn}}</button>
+    <button style="margin-left: 8px;"  (click)="postEquipo()" class="btn btn-outline-success">{{actionBtn}}</button>
 
 </div>

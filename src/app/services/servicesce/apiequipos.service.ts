@@ -12,16 +12,19 @@ export class ApiequiposService {
 
   constructor(private http: HttpClient) { }
 
-  postEquipo(data: any){
+  crearEquipo(data:any){
     return this.http.post<any>("http://localhost:3000/acumulado/",data);
   }
   getEquipo(){
     return this.http.get<any>("http://localhost:3000/acumulado/");
   }
-  deleteEquipo(id: number){
+  getEquipoById(id:number){
+    return this.http.get<any>("http://localhost:3000/acumulado/"+id);
+  }
+  eliminarEquipo(id:number){
     return this.http.delete<any>("http://localhost:3000/acumulado/"+id);
   }
-  putEquipo(data: any, id: number){
+  actualizarEquipo(data:any, id:number){
     return this.http.put<any>("http://localhost:3000/acumulado/"+id, data);
   }
   /* getAlEquipos */
@@ -53,8 +56,6 @@ export class ApiequiposService {
   // findByTitle(title: any): Observable<Tutorial[]> {
   //   return this.http.get<Tutorial[]>(`${baseUrl}?title=${title}`);
   // }
-
-  // DISPONIBILIDAD
   getDisponibilidad(){
     return this.http.get<any>("http://localhost:3000/disponibilidad/");
   }

@@ -8,6 +8,73 @@ const pool = new Pool({
 });
 
 
+const getEquipo = (request, response) => {
+  pool.query(
+    "SELECT * FROM acumulado",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
+const getEquipoById = (request, response) => {
+  const id = parseInt(request.params.id);
+  pool.query("SELECT * FROM acumulado WHERE id = $1", [id],
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
+
+const crearEquipo = (request, response) => {
+  const { tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares } = request.body;
+
+  pool.query(
+    "INSERT INTO acumulado (tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *",
+    [tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares],
+    (error, result) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).send("Agregado con exito");
+    }
+  );
+};
+
+const actualizarEquipo = (request, response) => {
+  const { id, tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares } = request.body;
+  pool.query(
+    "UPDATE acumulado SET tipoequipo = $1, noeco = $2, unidad = $3, modelo = $4, anio = $5, numeroserie = $6, motor = $7, seriemotor = $8, estatus = $9, atencion = $10, costopesos = $11, costodolares = $12 WHERE id = $13 RETURNING * ",
+    [id, tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares],
+    (error, result) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).send("Actualizado con exito");
+    }
+  );
+};
+const eliminarEquipo = (request, response) => {
+  const id = parseInt(request.params.id);
+  pool.query(
+    "DELETE FROM acumulado WHERE id = $1",
+    [id],
+    (error, result) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).send("Eliminado con exito");
+    }
+  );
+};
+
+
 // //   api de tipousuario
 // const getTipousuario = (request, response) => {
 //   pool.query(
@@ -93,15 +160,15 @@ const getUsuario = (request, response) => {
 };
 
 const getUsuarioPorId = (request, response) => {
-    const numtrabajador = parseInt(request.params.numtrabajador);
-    pool.query("SELECT * FROM usuarios WHERE numtrabajador = $1", [numtrabajador],
-      (error, result) => {
-        if (error) {
-          throw error;
-        }
-        response.status(200).json(result.rows);
+  const numtrabajador = parseInt(request.params.numtrabajador);
+  pool.query("SELECT * FROM usuarios WHERE numtrabajador = $1", [numtrabajador],
+    (error, result) => {
+      if (error) {
+        throw error;
       }
-    );
+      response.status(200).json(result.rows);
+    }
+  );
 };
 
 // const crearUsuario = (request, response) => {
@@ -159,9 +226,11 @@ const getUsuarioPorId = (request, response) => {
 module.exports = {
   // getTipousuario,
   // getTipousuarioPorId,
-  // crearTipousuario,
-  // actualizarTipousuario,
-  // eliminarTipousuario,
+  getEquipoById,
+  crearEquipo,
+  actualizarEquipo,
+  eliminarEquipo,
+  getEquipo,
   getUsuario,
   getUsuarioPorId,
   // crearUsuario,

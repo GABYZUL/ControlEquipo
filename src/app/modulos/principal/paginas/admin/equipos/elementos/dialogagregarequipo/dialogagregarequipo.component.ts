@@ -12,24 +12,24 @@ import { ApiequiposService } from 'src/app/services/servicesce/apiequipos.servic
 export class DialogagregarequipoComponent implements OnInit {
   agregarequipoForm !: FormGroup;
   actionBtn: String = "Save"
-  
+
   constructor(private formBuilder: FormBuilder,
     private api: ApiequiposService,
     private dialogRef: MatDialogRef<DialogagregarequipoComponent>, @Inject (MAT_DIALOG_DATA) public editData: any) { }
   ngOnInit(): void {
     this.agregarequipoForm = this.formBuilder.group({
-      tipomaquina: ['', Validators.required],
+      tipoequipo: ['', Validators.required],
       noeco: ['', Validators.required],
-      idunidad: ['', Validators.required],
+      unidad: ['', Validators.required],
       modelo: ['', Validators.required],
       anio: ['', Validators.required],
-      serie: ['', Validators.required],
+      numeroserie: ['', Validators.required],
       motor: ['', Validators.required],
       seriemotor: ['', Validators.required],
       estatus: ['', Validators.required],
       atencion: ['', Validators.required],
-      costoPesos: ['', Validators.required],
-      costoDolares: ['', Validators.required]
+      costopesos: ['', Validators.required],
+      costodolares: ['', Validators.required]
     })
 
     // if(this.editData){
@@ -60,17 +60,16 @@ export class DialogagregarequipoComponent implements OnInit {
 
   }
 
-  addEquipo() {
+  postEquipo() {
     if (this.agregarequipoForm.valid) {
-      this.api.postEquipo(this.agregarequipoForm.value)
-        .subscribe({
+      this.api.crearEquipo(this.agregarequipoForm.value).subscribe({
           next: (res) => {
-            alert("Product added successfully")
+            alert("Equipo añadido de manera exitosa")
             this.agregarequipoForm.reset();
             this.dialogRef.close('Save');
           },
           error: () => {
-            alert("Error while adding the product")
+            window.location.reload();
           }
         })
     }

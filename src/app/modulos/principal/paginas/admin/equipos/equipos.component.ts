@@ -20,18 +20,12 @@ import { DialogdetalleComponent } from './elementos/dialogdetalle/dialogdetalle/
 export class EquiposComponent implements OnInit {
   title = 'Equipos';
   displayedColumns: string[] = [
+    'id',
     'noeco',
-    'tipomaquina',
-    'idunidad',
+    'tipoequipo',
+    'unidad',
     'modelo',
-    'anio',
-    'serie',
-    'motor',
-    'seriemotor',
     'estatus',
-    'atencion',
-    'costoPesos',
-    'costoDolares',
     'accion'
   ];
 
@@ -67,22 +61,24 @@ export class EquiposComponent implements OnInit {
           this.dataSource.sort = this.sort;
         },
         error: (err) => {
-          alert("Error while fetching the records")
+          ("Error al acceder a la base de datos")
         }
       })
   }
-  deleteEquipo(id: number) {
-    this.api.deleteEquipo(id).subscribe({
+  eliminarEquipo(id:number) {
+      this.api.eliminarEquipo(id).subscribe({
       next: (res) => {
         alert("Equipo eliminado!")
+
         this.getAllEquipos();
       },
       error: () => {
-        alert("Error!!!")
+        alert("Equipo eliminado!")
+        window.location.reload();
       }
     })
   }
-  editEquipo(row: any) {
+  editEquipo(row:any) {
     this.dialog.open(DialogeditarComponent, {
       width: '50%',
       data: row
@@ -92,7 +88,7 @@ export class EquiposComponent implements OnInit {
       }
     })
   }
-  getEquipoByid(row: any) {
+  getEquipoByid(row:any) {
     this.dialog.open(DialogdetalleComponent, {
       width: '50%',
       data: row
