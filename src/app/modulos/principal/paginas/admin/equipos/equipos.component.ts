@@ -25,6 +25,12 @@ export class EquiposComponent implements OnInit {
     'unidad',
     'modelo',
     'estatus',
+    'anio',
+    'numeroserie',
+    'motor',
+    'seriemotor',
+    'costopesos',
+    'costodolares',
     'accion'
   ];
 
