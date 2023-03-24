@@ -9,7 +9,6 @@ import { PrincipalComponent } from './principal.component';
 import { LoginComponent } from '../login/inicio/login/login.component';
 import { DisponibilidaddiariaComponent } from './paginas/admin/disponibilidaddiaria/disponibilidaddiaria.component';
 import { EquiposvisitanteComponent } from './paginas/visitante/equiposvisitante/equiposvisitante/equiposvisitante.component';
-import { NopermitidoComponent } from 'src/app/nopermitido/nopermitido.component';
 
 const rutas: Routes = [
   {path:'', component:LoginComponent},
@@ -32,11 +31,9 @@ const rutas: Routes = [
   children:[
 
     {path:'equiposvisitante', component: EquiposvisitanteComponent},
-    {path:'administrador', component: NopermitidoComponent},
-    {path:'valorequipos', component: NopermitidoComponent},
-    {path:'checklist', component: NopermitidoComponent},
-    {path:'disponibilidaddiaria', component: NopermitidoComponent},
-
+    {path:'valorequipos', component: ValorequiposComponent},
+    {path:'checklist', component:ChecklistComponent},
+    {path:'disponibilidaddiaria', component: DisponibilidaddiariaComponent}
 
   ]
 

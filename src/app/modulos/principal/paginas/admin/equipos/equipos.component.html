@@ -30,10 +30,6 @@
     <table mat-table [dataSource]="dataSource" matSort>
 
 
-      <ng-container matColumnDef="id" sticky>
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Equipo </th>
-        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-      </ng-container>
       <ng-container matColumnDef="noeco" sticky>
         <th mat-header-cell *matHeaderCellDef mat-sort-header> No. Eco </th>
         <td mat-cell *matCellDef="let row"> {{row.noeco}} </td>

@@ -20,7 +20,6 @@ import { DialogdetalleComponent } from './elementos/dialogdetalle/dialogdetalle/
 export class EquiposComponent implements OnInit {
   title = 'Equipos';
   displayedColumns: string[] = [
-    'id',
     'noeco',
     'tipoequipo',
     'unidad',
