@@ -32,6 +32,7 @@ import { NgChartsModule } from 'ng2-charts';
 
 // CONTROL EQUIPOS DIALOGOS
 import { FormComponent } from './components/form/form.component';
+import { NopermitidoComponent } from './nopermitido/nopermitido.component';
 
 
 
@@ -40,6 +41,7 @@ import { FormComponent } from './components/form/form.component';
     AppComponent,
   FormComponent,
   SesionesComponent,
+  NopermitidoComponent,
   ],
   imports: [
     BrowserModule,
