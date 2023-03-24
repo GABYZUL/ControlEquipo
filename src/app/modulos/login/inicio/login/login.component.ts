@@ -35,15 +35,15 @@ export class LoginComponent {
     });
   }
 
-  public submitFormulario() {
-    if (this.myForm.valid) {
-      const { usuario, password } = this.myForm.value;
+  public submitFormulario(){
+    if(this.myForm.valid){
+      const {usuario, password} = this.myForm.value;
 
       this.loginPrd.ingresarAplicativo(usuario).subscribe({
-        next: (res) => {
+        next:(res)=>{
           const [userData] = res;
 
-          if (usuario == userData.numtrabajador && password == userData.contra) {
+          if(usuario == userData.numtrabajador && password == userData.contra){
             const tokenData = {
               usuario: userData.numtrabajador,
               tipo: userData.tipoUsuario
@@ -52,19 +52,22 @@ export class LoginComponent {
             console.log('token', token);
             sessionStorage.setItem('token', JSON.stringify(token));
 
-            this.routerprd.navigateByUrl("/administrador/equipos")
-          } else {
+            if(userData.tipoUsuario == "Administrador"){
+              this.routerprd.navigateByUrl("/administrador/equipos")
+            }else if(userData.tipoUsuario == "Visitante"){
+              this.routerprd.navigateByUrl("/visitante/equiposvisitante")
+            }
+          }else{
             alert("Usuario o contraseña incorrectos");
             console.log("VIENTOS")
           }
         },
-        error: (err) => {
+        error:(err)=>{
           alert("Usuario no encontrado");
         }
       })
     }
   }
-
 
 
   base64url(source: any) {

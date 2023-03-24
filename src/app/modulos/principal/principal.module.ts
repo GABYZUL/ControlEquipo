@@ -10,18 +10,7 @@ import { DisponibilidaddiariaComponent } from './paginas/admin/disponibilidaddia
 import { RouterModule } from '@angular/router';
 import { InterfazModule } from 'src/app/interfaz/privado/menu/menu.module';
 import { PrincipalComponent } from './principal.component';
-//import { EquiposComponent } from './equipos/equipos.component';
-//import { ValorequiposComponent } from './valorequipos/valorequipos.component';
-//import { ChecklistComponent } from './checklist/checklist.component';
-//import { DisponibilidaddiariaComponent } from './disponibilidaddiaria/disponibilidaddiaria.component';
-//import { HorometrosComponent } from './horometros/horometros.component';
-//import { PreventivosComponent } from './preventivos/preventivos.component';
-//import { SemanalesComponent } from './semanales/semanales.component';
 
-//import { ManpowerComponent } from './manpower/manpower.component';
-//import { KpisComponent } from './kpis/kpis.component';
-//import { DialoghoroRegistrarComponent } from './horometros/elementos/dialoghoro-registrar/dialoghoro-registrar.component';
-//import { DialoghoroDetallesComponent } from './horometros/elementos/dialoghoro-detalles/dialoghoro-detalles.component';
 import { VermasComponent } from './paginas/admin/disponibilidaddiaria/elementos/vermas/vermas.component';
 
 //IMPORTS DE FORMS
@@ -41,16 +30,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { PreventivosFormComponent } from './preventivos/elementos/preventivos-form/preventivos-form.component';
-//import { PrimerMantComponent } from './preventivos/elementos/primer-mant/primer-mant.component';
-//import { DetallesPreventivosComponent } from './preventivos/elementos/detalles-preventivos/detalles-preventivos.component';
-//import { ManpowerFormComponent } from './manpower/elementos/manpower-form/manpower-form.component';
-//import { ManpowerDetallesComponent } from './manpower/elementos/manpower-detalles/manpower-detalles.component';
-//import { SemanalesFormComponent } from './semanales/elementos/semanales-form/semanales-form.component';
-//import { BitacoraFormComponent } from './bitacora/elementos/bitacora-form/bitacora-form.component';
-//import { DetallesBitacoraComponent } from './bitacora/elementos/detalles-bitacora/detalles-bitacora.component';
+
 import {MatCardModule} from '@angular/material/card';
 import { NgChartsModule } from 'ng2-charts';
+import { EquiposvisitanteComponent } from './paginas/visitante/equiposvisitante/equiposvisitante/equiposvisitante.component';
+import { DialogdetallevisitanteComponent } from './paginas/visitante/equiposvisitante/elementos/dialogdetallevisitante/dialogdetallevisitante.component';
 
 //DIALOGS EQUIPOS
 //import { DialogagregarequipoComponent } from './equipos/elementos/dialogagregarequipo/dialogagregarequipo.component';
@@ -87,7 +71,9 @@ import { NgChartsModule } from 'ng2-charts';
     DialogagregarequipoComponent,
     DialogdetalleComponent,
     DialogeditarComponent,
-    ValorequiposComponent
+    ValorequiposComponent,
+    EquiposvisitanteComponent,
+    DialogdetallevisitanteComponent,
   ],
   imports: [
     CommonModule,
