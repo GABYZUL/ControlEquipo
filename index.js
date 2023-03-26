@@ -52,6 +52,7 @@ app.delete('/acumulado/:id', db.eliminarEquipo)
 // metodos de usuario
 app.get('/usuarios',db.getUsuario)
 app.get('/usuarios/:numtrabajador',db.getUsuarioPorId)
+app.get('acumulado/estatus',db.getTotalDisponibles)
 // app.post('/usuario',db.crearUsuario)
 // app.put('/usuario/:id',db.actualizarUsuario)
 // app.delete('/usuario/:id',db.eliminarUsuario)

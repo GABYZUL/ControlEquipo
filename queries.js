@@ -47,6 +47,7 @@ const crearEquipo = (request, response) => {
   );
 };
 
+
 const actualizarEquipo = (request, response) => {
   const { id, tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares } = request.body;
   pool.query(
@@ -73,6 +74,21 @@ const eliminarEquipo = (request, response) => {
     }
   );
 };
+const getTotalDisponibles = (request, response) => {
+  const estatus = parseInt(request.params.id);
+  pool.query(
+    "SELECT * FROM acumulado WHERE estatus = 'Operativo",
+    [estatus],
+    (error, result) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(result.rows);
+    }
+  );
+};
+
+
 
 
 // //   api de tipousuario
@@ -233,6 +249,7 @@ module.exports = {
   getEquipo,
   getUsuario,
   getUsuarioPorId,
+  getTotalDisponibles
   // crearUsuario,
   // actualizarUsuario,
   // eliminarUsuario

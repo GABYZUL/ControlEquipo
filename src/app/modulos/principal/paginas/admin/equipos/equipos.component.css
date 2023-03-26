@@ -1,13 +1,3 @@
-#button-header {
-  margin-top: 5px;
-  width: 200px;
-  height: 50px;
-  color: white;
-  font-size: 13px;
-  border-radius: 10px;
-  background-color: #3B8C88;
-  border: none;
-}
 
 @media only screen and (max-width: 992px) {
   #inputFiltro {
@@ -30,13 +20,14 @@
     color: white;
     font-size: 13px;
     border-radius: 10px;
-    background-color: #D54B1A;
+
+    background-image: linear-gradient(#212a47, #13615e);
+
     margin-bottom: 20px;
   }
 
   #item2 {
     width: 200px;
-
     height: 60px;
     margin-bottom: 20px;
     color: white;
@@ -95,24 +86,15 @@
     font-size: 13px;
     border-radius: 10px;
     right: 10px;
-    background-color: #D54B1A;
+    background-image: linear-gradient(#3b8c88, #2f66be);
+
 
 
 
 
   }
 
-  #item2 {
-    width: 200px;
-    height: 60px;
-    margin-bottom: 20px;
-    color: white;
-    font-size: 13px;
-    border-radius: 10px;
-    margin-top: -80px;
-    margin-left: 40%;
-    background-color: #3f8854;
-  }
+
 
 }
 
@@ -153,9 +135,9 @@
 
 
 label {
-  margin-top: 30px;
+  margin-top: 20px;
   position: absolute;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 span {
@@ -200,3 +182,5 @@ td.mat-column-position {
 .mat-mdc-table-sticky-border-elem-left {
   border-right: 1px solid #e0e0e0;
 }
+
+/* GENERALS */
