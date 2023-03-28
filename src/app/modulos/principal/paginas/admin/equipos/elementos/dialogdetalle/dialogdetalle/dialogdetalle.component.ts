@@ -1,6 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { ApiequiposService } from 'src/app/services/servicesce/apiequipos.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-dialogdetalle',
@@ -8,36 +12,33 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./dialogdetalle.component.css']
 })
 export class DialogdetalleComponent implements OnInit {
-  EquipoForm!: FormGroup;
-  actionBtn: String = "Guardar"
-  constructor(private formBuilder: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public detalle: any) { }
-  ngOnInit(): void {
-    this.EquipoForm = this.formBuilder.group({
-      UnidadNegocio: [''],
-      Año: [''],
-      Atencion: [''],
-      Estatus: [''],
-    })
-    if (this.detalle) {
-      this.actionBtn = "Aceptar";
-      this.EquipoForm.controls['UnidadNegocio'].setValue(
-        this.detalle.UnidadNegocio
-      );
-      this.EquipoForm.controls['Año'].setValue(
-        this.detalle.Año
-      );
-      this.EquipoForm.controls['Atencion'].setValue(
-        this.detalle.Atencion
-      );
-      this.EquipoForm.controls['Estatus'].setValue(
-        this.detalle.Estatus
-      );
-      this.EquipoForm.controls['UnidadNegocio'].disable();
-      this.EquipoForm.controls['Año'].disable();
-      this.EquipoForm.controls['Atencion'].disable();
-      this.EquipoForm.controls['Estatus'].disable();
+  title = 'Equipos';
+  displayedColumns: string[] = [
+    'id',
+    'noeco',
+    'tipoequipo',
+    'unidad',
+    'modelo',
+    'estatus',
+    'accion'
+  ];
+  dataSource !: MatTableDataSource<any>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
-    }
+  constructor(private dialog: MatDialog,  private api: ApiequiposService){}
+  ngOnInit(): void {
+  }
+  getEquipoById(id:number){
+    this.api.getEquipoById(id).subscribe({
+      next:(res)=>{
+        this.dataSource = new MatTableDataSource(res);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+      },
+      error: (err) => {
+        ("Error al acceder a la base de datos")
+      }
+    })
   }
 }

@@ -1,33 +1,45 @@
-<h1 mat-dialog-title>Detalles horómetro</h1>
-<div mat-dialog-content>
-    <form [formGroup]="EquipoForm">
-        <mat-form-field appearance="outline">
-            <mat-label>Unidad de Negocio</mat-label>
-            <input formControlName="UnidadNegocio" type="text" matInput placeholder="0">
-            </mat-form-field>
+<br>
+<h3 style="text-align: center;"><span> Todos los equipos</span></h3>
+<br>
 
-          <mat-form-field appearance="outline">
-            <mat-label>Año</mat-label>
-            <input formControlName="Año" matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <br>
 
-          <mat-form-field appearance="outline">
-            <mat-label>Atencion</mat-label>
-            <input formControlName="Atencion" type="text" matInput placeholder="0">
-            </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>Estatus</mat-label>
-              <input formControlName="Estatus" type="text" matInput placeholder="0">
-            </mat-form-field>
-    </form>
-</div>
+<div class="container">
+  <div id="filtroI"></div>
 
-<div mat-dialog-action [align]="'end'">
+  <br>
+  <br>
+  <hr>
 
-    <button class="btn btn-outline-danger" mat-dialog-close>Cerrar</button>
+  <section class="example-container mat-elevation-z8" tabindex="0">
+    <table mat-table [dataSource]="dataSource" matSort>
 
+      <ng-container matColumnDef="id" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Equipo </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="noeco" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. Eco </th>
+        <td mat-cell *matCellDef="let row"> {{row.noeco}} </td>
+      </ng-container>
+      <ng-container matColumnDef="tipoequipo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo equipo </th>
+        <td mat-cell *matCellDef="let row"> {{row.tipoequipo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="unidad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Unidad N. </th>
+        <td mat-cell *matCellDef="let row"> {{row.unidad}} </td>
+      </ng-container>
+      <ng-container matColumnDef="modelo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Modelo </th>
+        <td mat-cell *matCellDef="let row"> {{row.modelo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="estatus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estatus</th>
+        <td mat-cell *matCellDef="let row"> {{row.estatus}} </td>
+      </ng-container>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </section>
 </div>

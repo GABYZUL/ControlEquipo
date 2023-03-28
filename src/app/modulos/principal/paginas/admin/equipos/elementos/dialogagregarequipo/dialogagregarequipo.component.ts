@@ -12,7 +12,7 @@ import { ApiequiposService } from 'src/app/services/servicesce/apiequipos.servic
 export class DialogagregarequipoComponent implements OnInit {
   agregarequipoForm !: FormGroup;
   actionBtn: String = "Save"
-
+  
   constructor(private formBuilder: FormBuilder,
     private api: ApiequiposService,
     private dialogRef: MatDialogRef<DialogagregarequipoComponent>, @Inject (MAT_DIALOG_DATA) public editData: any) { }
@@ -31,36 +31,27 @@ export class DialogagregarequipoComponent implements OnInit {
       costopesos: ['', Validators.required],
       costodolares: ['', Validators.required]
     })
-
-    // if(this.editData){
-    //   this.actionBtn="Update";
-    //     this.productForm.controls['tipoAnimal'].setValue(this.editData.tipoAnimal);
-    //     this.productForm.controls['tipoAnimal'].disable();
-
-    //     this.productForm.controls['nombreAni'].setValue(this.editData.nombreAni);
-    //     this.productForm.controls['nombreAni'].disable();
-
-    //     this.productForm.controls['nombreDueno'].setValue(this.editData.nombreDueno);
-    //     this.productForm.controls['nombreDueno'].disable();
-
-    //     this.productForm.controls['problema'].setValue(this.editData.problema);
-    //     this.productForm.controls['problema'].disable();
-
-    //     this.productForm.controls['telefono'].setValue(this.editData.telefono);
-    //     this.productForm.controls['telefono'].disable();
-
-    //     this.productForm.controls['fhIngreso'].setValue(this.editData.fhIngreso);
-    //     this.productForm.controls['fhIngreso'].disable();
-
-    //     this.productForm.controls['fhSalida'].setValue(this.editData.fhSalida);
-
-    //     this.productForm.controls['consulta'].setValue(this.editData.consulta);
-
-    //   }
+    if(this.editData){
+      this.agregarequipoForm.controls['id'].setValue(this.editData.id);
+        this.agregarequipoForm.controls['tipoequipo'].setValue(this.editData.tipoequipo);
+        this.agregarequipoForm.controls['noeco'].setValue(this.editData.noeco);
+        this.agregarequipoForm.controls['unidad'].setValue(this.editData.unidad);
+        this.agregarequipoForm.controls['modelo'].setValue(this.editData.modelo);
+        this.agregarequipoForm.controls['anio'].setValue(this.editData.anio);
+        this.agregarequipoForm.controls['numeroserie'].setValue(this.editData.numeroserie);
+        this.agregarequipoForm.controls['motor'].setValue(this.editData.motor);
+        this.agregarequipoForm.controls['seriemotor'].setValue(this.editData.seriemotor);
+        this.agregarequipoForm.controls['estatus'].setValue(this.editData.estatus);
+        this.agregarequipoForm.controls['atencion'].setValue(this.editData.atencion);
+        this.agregarequipoForm.controls['costopesos'].setValue(this.editData.costopesos);
+        this.agregarequipoForm.controls['costodolares'].setValue(this.editData.costodolares);
+      
+    }
 
   }
 
   postEquipo() {
+    if(!this.editData){
     if (this.agregarequipoForm.valid) {
       this.api.crearEquipo(this.agregarequipoForm.value).subscribe({
           next: (res) => {
@@ -69,13 +60,32 @@ export class DialogagregarequipoComponent implements OnInit {
             this.dialogRef.close('Save');
           },
           error: () => {
+            alert("Recargando pagina");
             window.location.reload();
           }
         })
     }
+  }else{
+    this.actualizarEquipo();
+  }
 
   }
-  // else{
-  //   this.updateProduct()
-  // }
+  actualizarEquipo() {
+    //const id = this..id;
+    
+    this.api.actualizarEquipo(this.agregarequipoForm.value,this.editData.id).subscribe({
+      next:(res)=>{  
+        console.log(res);
+        console.log(this.agregarequipoForm.value)
+        console.log(this.editData.noeco);
+        alert("Cambios hechos");
+        this.agregarequipoForm.reset();
+        this.dialogRef.close('Actualizar');
+      },
+      error: (err) => {
+        console.log(err);
+        alert("Error al actualizar equipo: " + err.message);
+      }
+    })
+}
 }

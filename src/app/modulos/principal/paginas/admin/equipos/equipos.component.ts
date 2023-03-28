@@ -20,6 +20,7 @@ import { DialogdetalleComponent } from './elementos/dialogdetalle/dialogdetalle/
 export class EquiposComponent implements OnInit {
   title = 'Equipos';
   displayedColumns: string[] = [
+    'id',
     'noeco',
     'tipoequipo',
     'unidad',
@@ -74,25 +75,25 @@ export class EquiposComponent implements OnInit {
       this.api.eliminarEquipo(id).subscribe({
       next: (res) => {
         alert("Equipo eliminado!")
-
         this.getAllEquipos();
       },
       error: () => {
-        alert("Equipo eliminado!")
-        window.location.reload();
+        alert("Recargando la pagina")
+        window.location.reload()
       }
     })
   }
   editEquipo(row:any) {
     this.dialog.open(DialogeditarComponent, {
       width: '50%',
-      data: row
+      data: row // pasar el objeto completo 'row' a través de la propiedad 'editData'
     }).afterClosed().subscribe(val => {
       if (val === 'Actualizar') {
         this.getAllEquipos();
       }
-    })
+    });
   }
+  
   getEquipoByid(row:any) {
     this.dialog.open(DialogdetalleComponent, {
       width: '50%',
