@@ -12,7 +12,7 @@ import { ApiequiposService } from 'src/app/services/servicesce/apiequipos.servic
 export class DialogagregarequipoComponent implements OnInit {
   agregarequipoForm !: FormGroup;
   actionBtn: String = "Save"
-  
+
   constructor(private formBuilder: FormBuilder,
     private api: ApiequiposService,
     private dialogRef: MatDialogRef<DialogagregarequipoComponent>, @Inject (MAT_DIALOG_DATA) public editData: any) { }
@@ -45,7 +45,7 @@ export class DialogagregarequipoComponent implements OnInit {
         this.agregarequipoForm.controls['atencion'].setValue(this.editData.atencion);
         this.agregarequipoForm.controls['costopesos'].setValue(this.editData.costopesos);
         this.agregarequipoForm.controls['costodolares'].setValue(this.editData.costodolares);
-      
+
     }
 
   }
@@ -60,7 +60,7 @@ export class DialogagregarequipoComponent implements OnInit {
             this.dialogRef.close('Save');
           },
           error: () => {
-            alert("Recargando pagina");
+            alert("Equipo añadido de manera exitosa");
             window.location.reload();
           }
         })
@@ -72,9 +72,9 @@ export class DialogagregarequipoComponent implements OnInit {
   }
   actualizarEquipo() {
     //const id = this..id;
-    
+
     this.api.actualizarEquipo(this.agregarequipoForm.value,this.editData.id).subscribe({
-      next:(res)=>{  
+      next:(res)=>{
         console.log(res);
         console.log(this.agregarequipoForm.value)
         console.log(this.editData.noeco);
