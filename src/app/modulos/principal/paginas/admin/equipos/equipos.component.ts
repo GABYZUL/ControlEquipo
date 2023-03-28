@@ -8,7 +8,7 @@ import { MatSort } from '@angular/material/sort';
 import { ApiequiposService } from 'src/app/services/servicesce/apiequipos.service';
 import { DialogeditarComponent } from './elementos/dialogeditar/dialogeditar/dialogeditar.component';
 import { DialogdetalleComponent } from './elementos/dialogdetalle/dialogdetalle/dialogdetalle.component';
-
+import { AfterViewInit } from '@angular/core';
 
 
 
@@ -38,6 +38,11 @@ export class EquiposComponent implements OnInit {
   dataSource !: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
 
   constructor(private dialog: MatDialog, private api: ApiequiposService) { }
 
@@ -93,7 +98,7 @@ export class EquiposComponent implements OnInit {
       }
     });
   }
-  
+
   getEquipoByid(row:any) {
     this.dialog.open(DialogdetalleComponent, {
       width: '50%',

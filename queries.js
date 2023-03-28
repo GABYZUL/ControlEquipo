@@ -7,19 +7,6 @@ const pool = new Pool({
   port: "5432",
 });
 
-
-//   api de usuario
-const getUsuario = (request, response) => {
-  pool.query(
-    "SELECT * FROM usuarios",
-    (error, results) => {
-      if (error) {
-        throw error;
-      }
-      response.status(200).json(results.rows);
-    }
-  );
-};
 const getEquipo = (request, response) =>{
   pool.query(
     "SELECT * FROM acumulado",
@@ -88,17 +75,28 @@ const actualizarEquipo = (request, response) => {
      );
  };
 
+ const getUsuario = (request, response) => {
+  pool.query(
+    "SELECT * FROM usuarios",
+    (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    }
+  );
+};
 
 const getUsuarioPorId = (request, response) => {
-    const numtrabajador = parseInt(request.params.numtrabajador);
-    pool.query("SELECT * FROM usuarios WHERE numtrabajador = $1", [numtrabajador],
-      (error, result) => {
-        if (error) {
-          throw error;
-        }
-        response.status(200).json(result.rows);
+  const numtrabajador = parseInt(request.params.numtrabajador);
+  pool.query("SELECT * FROM usuarios WHERE numtrabajador = $1", [numtrabajador],
+    (error, result) => {
+      if (error) {
+        throw error;
       }
-    );
+      response.status(200).json(result.rows);
+    }
+  );
 };
 
 // const crearUsuario = (request, response) => {
