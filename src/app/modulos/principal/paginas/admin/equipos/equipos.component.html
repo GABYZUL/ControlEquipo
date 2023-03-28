@@ -2,31 +2,39 @@
 
 <h3 style="text-align: center;"><span> Todos los equipos</span></h3>
 <br>
-
-
+<!--
+    <p>Number of visible people: {{(dataSource|filter:query).length}}</p>
+<p>Total number of people: {{dataSource.length}}</p> -->
 <div class="container">
+
+  <div id="itemsresumen">
+    <div id="item1" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span id="span1">Equipos mostrados</span><label id="label1" for="">{{dataSource.filteredData.length}}</label></div>
+    <div id="item2" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span id="span1">Operativos    </span><label id="label2" for="">{{dataSource.filteredData.length}}</label></div>
+    <div id="item3" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span id="span1">Inoperativos</span><label id="label3" for="">{{dataSource.filteredData.length}}</label></div>
+    <div id="item4" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span id="span1">Desconocidos</span><label id="label4" for="">{{dataSource.filteredData.length}}</label></div>
+  </div>
+
+
+
+  <button id="button-header"  mat-raised-button
+  mat-raised-button (click)="OpenDialogAgregarEquipo()"><i  class="fa-sharp fa-3x fa-solid fa-plus"></i>
+  <div id="text-header">Agregar equipo</div>
+  </button>
   <div id="filtroI"></div>
+
   <ul id="menu-header">
     <li><mat-form-field id="inputFiltro">
         <mat-label>Filtrar</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Escriba una característica" #input>
       </mat-form-field></li>
   </ul>
+  <br>
 
 
-  <button id="button-header" style=" background-color: #002C46; color: rgb(255, 255, 255);" mat-raised-button
-    mat-raised-button (click)="OpenDialogAgregarEquipo()"><i class="fa-sharp  fa-solid fa-plus"></i>
-    <div id="text-header">Agregar equipo</div>
-  </button>
-  <hr>
 
-<!--
-    <p>Number of visible people: {{(dataSource|filter:query).length}}</p>
-<p>Total number of people: {{dataSource.length}}</p> -->
 
-  <div id="itemsresumen">
-    <div id="item1" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span>Equipos mostrados</span><label for="">{{dataSource.filteredData.length}}</label></div>
-</div>
+<br>
+<br>
 
 
   <section class="example-container mat-elevation-z8" tabindex="0">
