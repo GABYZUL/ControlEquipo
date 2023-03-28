@@ -1,0 +1,34 @@
+{
+  "acumulado": [
+    {
+      "tipomaquina": "1",
+      "noeco": "dasdsa",
+      "idunidad": "unidad2",
+      "modelo": "sdadw",
+      "anio": 34234,
+      "serie": 47,
+      "motor": "dsf",
+      "seriemotor": 32423,
+      "estatus": "2",
+      "atencion": "fwefdef",
+      "costoPesos": "fsd23542342",
+      "costoDolares": "42342342",
+      "id": 3
+    },
+    {
+      "tipomaquina": "2",
+      "noeco": "AC-4253",
+      "idunidad": "unidad2",
+      "modelo": "HC04123",
+      "anio": 2003,
+      "serie": 31425,
+      "motor": "GT-X342",
+      "seriemotor": 9431,
+      "estatus": "1",
+      "atencion": "Checar balatas esta bastante dañadas",
+      "costoPesos": "50000",
+      "costoDolares": "1200",
+      "id": 4
+    }
+  ]
+}

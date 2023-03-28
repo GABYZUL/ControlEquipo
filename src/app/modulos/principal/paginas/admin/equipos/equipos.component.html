@@ -1,0 +1,101 @@
+<br>
+<h3 style="text-align: center;"><span> Todos los equipos</span></h3>
+<br>
+
+
+
+<div class="container">
+  <div id="filtroI"></div>
+  <ul id="menu-header">
+    <li><mat-form-field style="width: 410px; height:70px; margin-right: 30px;">
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Coloque una caracteristica" #input>
+      </mat-form-field></li>
+  </ul>
+
+
+  <button id="button-header" style=" background-color: #002C46; color: rgb(255, 255, 255);" mat-raised-button
+    mat-raised-button (click)="OpenDialogAgregarEquipo()"><i class="fa-sharp fa-2x fa-solid fa-plus"></i>
+    <div id="text-header">Agregar equipo</div>
+  </button>
+  <br>
+  <br>
+  <hr>
+  <div id="itemsresumen">
+    <div id="item1" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span>Total Equipos</span><label
+        for="">{{dataSource.filteredData.length}}</label></div>
+    <div id="item2" class="totaldisponibles"><i id="icons" class="fa-sharp fa-3x fa-solid fa-truck-fast"></i><span>Total Disponibles</span><label
+        for=""></label></div>
+  </div>
+  <section class="example-container mat-elevation-z8" tabindex="0">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Equipo </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="noeco" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-hea der> No. Eco </th>
+        <td mat-cell *matCellDef="let row"> {{row.noeco}} </td>
+      </ng-container>
+      <ng-container matColumnDef="tipoequipo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo equipo </th>
+        <td mat-cell *matCellDef="let row"> {{row.tipoequipo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="unidad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Unidad N. </th>
+        <td mat-cell *matCellDef="let row"> {{row.unidad}} </td>
+      </ng-container>
+      <ng-container matColumnDef="modelo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Modelo </th>
+        <td mat-cell *matCellDef="let row"> {{row.modelo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="estatus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estatus</th>
+        <td mat-cell *matCellDef="let row"> {{row.estatus}} </td>
+      </ng-container>
+      <ng-container matColumnDef="anio">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Año</th>
+        <td mat-cell *matCellDef="let row"> {{row.anio}} </td>
+      </ng-container>
+      <ng-container matColumnDef="numeroserie">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Numero De Serie</th>
+        <td mat-cell *matCellDef="let row"> {{row.numeroserie}} </td>
+      </ng-container>
+      <ng-container matColumnDef="motor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Motor</th>
+        <td mat-cell *matCellDef="let row"> {{row.motor}} </td>
+      </ng-container>
+      <ng-container matColumnDef="seriemotor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Serie del Motor</th>
+        <td mat-cell *matCellDef="let row"> {{row.seriemotor}} </td>
+      </ng-container>
+      <ng-container matColumnDef="costopesos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Costo en Pesos</th>
+        <td mat-cell *matCellDef="let row"> {{row.costopesos}} </td>
+      </ng-container>
+      <ng-container matColumnDef="costodolares">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Costo en Dolares</th>
+        <td mat-cell *matCellDef="let row"> {{row.costodolares}} </td>
+      </ng-container>
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>
+        <td mat-cell *matCellDef="let row">
+            <button (click)="editEquipo(row)" mat-icon-button color="primary">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="eliminarEquipo(row.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </section>
+</div>

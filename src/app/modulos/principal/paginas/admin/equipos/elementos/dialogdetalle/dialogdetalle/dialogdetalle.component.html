@@ -1,0 +1,45 @@
+<br>
+<h3 style="text-align: center;"><span> Todos los equipos</span></h3>
+<br>
+
+
+
+<div class="container">
+  <div id="filtroI"></div>
+
+  <br>
+  <br>
+  <hr>
+
+  <section class="example-container mat-elevation-z8" tabindex="0">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Equipo </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="noeco" sticky>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. Eco </th>
+        <td mat-cell *matCellDef="let row"> {{row.noeco}} </td>
+      </ng-container>
+      <ng-container matColumnDef="tipoequipo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tipo equipo </th>
+        <td mat-cell *matCellDef="let row"> {{row.tipoequipo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="unidad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Unidad N. </th>
+        <td mat-cell *matCellDef="let row"> {{row.unidad}} </td>
+      </ng-container>
+      <ng-container matColumnDef="modelo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Modelo </th>
+        <td mat-cell *matCellDef="let row"> {{row.modelo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="estatus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estatus</th>
+        <td mat-cell *matCellDef="let row"> {{row.estatus}} </td>
+      </ng-container>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </section>
+</div>
