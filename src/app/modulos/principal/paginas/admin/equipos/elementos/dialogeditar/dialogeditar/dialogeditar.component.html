@@ -7,25 +7,29 @@
             <input formControlName="id" type="number" matInput>
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Tipo de equipo</mat-label>
-            <mat-select formControlName="tipoequipo">
-                <mat-option value="1">Unidad 1</mat-option>
-                <mat-option value="2">Unidad 2</mat-option>
-                <mat-option value="3">Unidad 3</mat-option>
-            </mat-select>
-        </mat-form-field>
+          <mat-label>Tipo de equipo</mat-label>
+          <mat-select formControlName="tipoequipo">
+              <mat-option value="SideLoader">Side Loader</mat-option>
+              <mat-option value="Tractocamion">Tracto Camion</mat-option>
+              <mat-option value="Retroexcavadora">Retroexcavadora</mat-option>
+          </mat-select>
+      </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>No. Eco.</mat-label>
+            <mat-label>Número ecnómico</mat-label>
             <input formControlName="noeco" type="text" matInput placeholder="ABC-01">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <mat-label>Unidad</mat-label>
-            <mat-select formControlName="unidad">
-                <mat-option value="unidad1">Unidad 1</mat-option>
-                <mat-option value="unidad2">Unidad 2</mat-option>
-                <mat-option value="unidad3">Unidad 3</mat-option>
-            </mat-select>
+          <mat-label>Unidad de Negocio</mat-label>
+          <mat-select formControlName="unidad">
+            <mat-option value="Depósito Veracruz">Depósito Veracruz</mat-option>
+            <mat-option value="Depósito Lazaro">Depósito Lázaro</mat-option>
+            <mat-option value="Depósito Ensenada">Depósito Ensenada</mat-option>
+            <mat-option value="Depósito Manzanillo">Depósito Manzanillo</mat-option>
+            <mat-option value="Depósito Tultepec">Depósito Tultepec</mat-option>
+            <mat-option value="SUKARGA">SUKARGA</mat-option>
+            <mat-option value="RFE">RFE</mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Modelo</mat-label>
