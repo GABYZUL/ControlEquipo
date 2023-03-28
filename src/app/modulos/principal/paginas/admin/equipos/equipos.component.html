@@ -6,19 +6,34 @@
     <p>Number of visible people: {{(dataSource|filter:query).length}}</p>
 <p>Total number of people: {{dataSource.length}}</p> -->
 <div class="container">
-
-  <div id="itemsresumen">
-    <div id="item1" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span id="span1">Equipos mostrados</span><label id="label1" for="">{{dataSource.filteredData.length}}</label></div>
-    <div id="item2" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span id="span1">Operativos    </span><label id="label2" for="">{{dataSource.filteredData.length}}</label></div>
-    <div id="item3" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span id="span1">Inoperativos</span><label id="label3" for="">{{dataSource.filteredData.length}}</label></div>
-    <div id="item4" class="totalequipos"><i id="icons" class="fa-solid fa-3x fa-truck"></i><span id="span1">Desconocidos</span><label id="label4" for="">{{dataSource.filteredData.length}}</label></div>
+  <div style=" justify-content: center; ">
+    <button>
+      <div id="item1" class="totalequipos"><i style="margin-left: -10px;" id="icons"
+          class="fa-solid fa-3x fa-truck"></i><span id="span1">Equipos mostrados</span><label id="label1"
+          for="">{{dataSource.filteredData.length}}</label></div>
+    </button>
+    <button>
+      <div id="item2" class="totalequipos"><i style="margin-left: -35px;" id="icons"
+          class="fa-solid fa-3x fa-truck"></i><span id="span1">Operativos </span><label id="label2"
+          for="">{{dataSource.filteredData.length}}</label></div>
+    </button>
+    <button>
+      <div id="item3" class="totalequipos"><i style="margin-left: -30px;" id="icons"
+          class="fa-solid fa-3x fa-truck"></i><span id="span1">Inoperativos</span><label id="label3"
+          for="">{{dataSource.filteredData.length}}</label></div>
+    </button>
+    <button>
+      <div id="item4" class="totalequipos"><i style="margin-left: -25px;" id="icons"
+          class="fa-solid fa-3x fa-truck"></i><span id="span1">Desconocidos</span><label id="label4"
+          for="">{{dataSource.filteredData.length}}</label></div>
+    </button>
   </div>
 
 
 
-  <button id="button-header"  mat-raised-button
-  mat-raised-button (click)="OpenDialogAgregarEquipo()"><i  class="fa-sharp fa-3x fa-solid fa-plus"></i>
-  <div id="text-header">Agregar equipo</div>
+  <button id="button-header" mat-raised-button mat-raised-button (click)="OpenDialogAgregarEquipo()"><i
+      class="fa-sharp fa-3x fa-solid fa-plus"></i>
+    <div id="text-header">Agregar equipo</div>
   </button>
   <div id="filtroI"></div>
 
@@ -33,8 +48,8 @@
 
 
 
-<br>
-<br>
+  <br>
+  <br>
 
 
   <section class="example-container mat-elevation-z8" tabindex="0">
@@ -42,60 +57,61 @@
 
 
       <ng-container matColumnDef="noeco" sticky>
-        <th mat-header-cell style="background-color: #3b8c88;" *matHeaderCellDef mat-sort-header > No. Eco </th>
-        <td mat-cell  style="background-color: #aeaeae;"  *matCellDef="let row"> {{row.noeco}} </td>
+        <th mat-header-cell style="background-color: #3b8c88;" *matHeaderCellDef mat-sort-header> No. Eco </th>
+        <td mat-cell style="background-color: #aeaeae;" *matCellDef="let row"> {{row.noeco}} </td>
       </ng-container>
       <ng-container matColumnDef="tipoequipo">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Tipo equipo </th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Tipo equipo </th>
         <td mat-cell *matCellDef="let row"> {{row.tipoequipo}} </td>
       </ng-container>
       <ng-container matColumnDef="unidad">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Unidad N. </th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Unidad N. </th>
         <td mat-cell *matCellDef="let row"> {{row.unidad}} </td>
       </ng-container>
       <ng-container matColumnDef="modelo">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Modelo </th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Modelo </th>
         <td mat-cell *matCellDef="let row"> {{row.modelo}} </td>
       </ng-container>
       <ng-container matColumnDef="estatus">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Estatus</th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Estatus</th>
         <td mat-cell *matCellDef="let row"> {{row.estatus}} </td>
       </ng-container>
       <ng-container matColumnDef="anio">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Año</th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Año</th>
         <td mat-cell *matCellDef="let row"> {{row.anio}} </td>
       </ng-container>
       <ng-container matColumnDef="numeroserie">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Num. Serie</th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Num. Serie</th>
         <td mat-cell *matCellDef="let row"> {{row.numeroserie}} </td>
       </ng-container>
       <ng-container matColumnDef="motor">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Motor</th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Motor</th>
         <td mat-cell *matCellDef="let row"> {{row.motor}} </td>
       </ng-container>
       <ng-container matColumnDef="seriemotor">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Serie motor</th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Serie motor</th>
         <td mat-cell *matCellDef="let row"> {{row.seriemotor}} </td>
       </ng-container>
       <ng-container matColumnDef="costopesos">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Costo en Pesos</th>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Costo en Pesos</th>
         <td mat-cell *matCellDef="let row"> {{row.costopesos | currency: 'USD' | lowercase}} </td>
       </ng-container>
       <ng-container matColumnDef="costodolares">
-        <th mat-header-cell style="background-color: #3b8c88ac;"  *matHeaderCellDef mat-sort-header> Costo en Dolares</th>
-        <td mat-cell *matCellDef="let row"> {{row.costodolares  | currency: 'USD' | lowercase}} </td>
+        <th mat-header-cell style="background-color: #3b8c88ac;" *matHeaderCellDef mat-sort-header> Costo en Dolares
+        </th>
+        <td mat-cell *matCellDef="let row"> {{row.costodolares | currency: 'USD' | lowercase}} </td>
       </ng-container>
-      <ng-container  matColumnDef="accion" stickyEnd >
-        <th mat-header-cell style="background-color: #3b8c88;"  *matHeaderCellDef mat-sort-header> Acciones </th>
+      <ng-container matColumnDef="accion" stickyEnd>
+        <th mat-header-cell style="background-color: #3b8c88;" *matHeaderCellDef mat-sort-header> Acciones </th>
         <td mat-cell style="background-color: #aeaeae;" *matCellDef="let row">
-            <button (click)="editEquipo(row)" mat-icon-button color="primary">
-                <mat-icon>edit</mat-icon>
-            </button>
-            <button mat-icon-button color="warn" (click)="eliminarEquipo(row.id)">
-                <mat-icon>delete</mat-icon>
-            </button>
+          <button (click)="editEquipo(row)" mat-icon-button color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminarEquipo(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
         </td>
-    </ng-container>
+      </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       <tr class="mat-row" *matNoDataRow>

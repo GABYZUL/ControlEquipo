@@ -30,7 +30,7 @@
     color: white;
     font-size: 13px;
     border-radius: 10px;
-    background-image: linear-gradient(#212a47, #13615e);
+    background-image: linear-gradient(#0b2b62, #496dc1);
     margin-bottom: 20px;
   }
 
@@ -40,7 +40,7 @@
     color: white;
     font-size: 13px;
     border-radius: 10px;
-    background-image: linear-gradient(#72773a, #13615e);
+    background-image: linear-gradient(#73773a, #d4dd51);
     margin-bottom: 20px;
   }
 
@@ -77,7 +77,7 @@
 
 #icons {
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: -10px;
   position: absolute;
 }
 
@@ -210,12 +210,9 @@ label {
   margin-left: 30px;
 }
 
-#label4{
-  margin-left: 30px;
-}
 
 #span1 {
-  margin-left: 60px;
+  margin-left: 36px;
 }
 
 #itemsresumen {
@@ -260,3 +257,6 @@ td.mat-column-position {
 }
 
 /* GENERALS */
+button{
+  border: none;
+}
