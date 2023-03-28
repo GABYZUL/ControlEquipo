@@ -14,7 +14,6 @@ export class SidebarComponent implements OnInit {
   constructor(private aut:AutentificacionService, private router:Router){}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.')
   }
   public cerrarSesion(){
     sessionStorage.clear();

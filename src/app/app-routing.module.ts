@@ -17,7 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./modulos/principal/principal.module').then(m => m.PrincipalModule)
   },
   {
-    path: 'visitante', component : PrincipalComponent, canActivate:[PermisosRutasService],
+    path: 'visitante', component : PrincipalComponent,
     loadChildren: () => import('./modulos/principal/principal.module').then(m => m.PrincipalModule)
   },
   { path: "**", redirectTo: 'inicio/login' },

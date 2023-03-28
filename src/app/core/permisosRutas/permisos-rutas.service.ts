@@ -16,6 +16,5 @@ export class PermisosRutasService implements CanActivate {
       return this.router.parseUrl("")
     }
     return true;
-    //throw new Error('Method not implemented.');
   }
 }

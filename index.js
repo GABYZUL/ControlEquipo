@@ -46,13 +46,13 @@ app.get('/',(request, response)=>{
 
 app.get('/acumulado', db.getEquipo)
 app.get('/acumulado/:id', db.getEquipoById)
+app.get('/acumulado/',db.getContadorOperativos)
 app.post('/acumulado', db.crearEquipo)
 app.put('/acumulado/:id',db.actualizarEquipo)
 app.delete('/acumulado/:id', db.eliminarEquipo)
 // metodos de usuario
 app.get('/usuarios',db.getUsuario)
 app.get('/usuarios/:numtrabajador',db.getUsuarioPorId)
-app.get('acumulado/estatus',db.getTotalDisponibles)
 // app.post('/usuario',db.crearUsuario)
 // app.put('/usuario/:id',db.actualizarUsuario)
 // app.delete('/usuario/:id',db.eliminarUsuario)

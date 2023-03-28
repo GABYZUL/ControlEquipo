@@ -46,9 +46,6 @@ export class EquiposComponent implements OnInit {
 
   OpenDialogAgregarEquipo() {
     this.dialog.open(DialogagregarequipoComponent, {
-      // data: {
-      //   animal:'PERRO',
-      // },
       width: '30%',
     }).afterClosed().subscribe(val => {
       if (val === 'save') {
@@ -74,7 +71,6 @@ export class EquiposComponent implements OnInit {
       this.api.eliminarEquipo(id).subscribe({
       next: (res) => {
         alert("Equipo eliminado!")
-
         this.getAllEquipos();
       },
       error: () => {
@@ -103,14 +99,11 @@ export class EquiposComponent implements OnInit {
       }
     })
   }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }

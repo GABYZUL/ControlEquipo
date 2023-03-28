@@ -20,6 +20,7 @@ const getEquipo = (request, response) => {
   );
 };
 
+
 const getEquipoById = (request, response) => {
   const id = parseInt(request.params.id);
   pool.query("SELECT * FROM acumulado WHERE id = $1", [id],
@@ -32,6 +33,45 @@ const getEquipoById = (request, response) => {
   );
 };
 
+const getContadorOperativos = (request, response) => {
+  pool.query(
+    "SELECT * FROM acumulado WHERE estatus = 'Operativo'",
+    (error, result) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(result.rows);
+    }
+  );
+};
+
+/*const getContadorInoperativos = (request, response) => {
+  const estatus = parseInt(request.params.id);
+  pool.query(
+    "SELECT count FROM acumulado WHERE estatus = 'Inoperativo'",
+    [estatus],
+    (error, result) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(result.rows);
+    }
+  );
+};
+const getContadorDesconocidos = (request, response) => {
+  const estatus = parseInt(request.params.id);
+  pool.query(
+    "SELECT count FROM acumulado WHERE estatus = 'Desconocido'",
+    [estatus],
+    (error, result) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(result.rows);
+    }
+  );
+};
+*/
 const crearEquipo = (request, response) => {
   const { tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares } = request.body;
 
@@ -74,19 +114,7 @@ const eliminarEquipo = (request, response) => {
     }
   );
 };
-const getTotalDisponibles = (request, response) => {
-  const estatus = parseInt(request.params.id);
-  pool.query(
-    "SELECT * FROM acumulado WHERE estatus = 'Operativo",
-    [estatus],
-    (error, result) => {
-      if (error) {
-        throw error;
-      }
-      response.status(200).json(result.rows);
-    }
-  );
-};
+
 
 
 
@@ -243,13 +271,16 @@ module.exports = {
   // getTipousuario,
   // getTipousuarioPorId,
   getEquipoById,
+  //getTotalDisponibles,
+  getContadorOperativos,
+  //getContadorInoperativos,
+  //getContadorDesconocidos,
   crearEquipo,
   actualizarEquipo,
   eliminarEquipo,
   getEquipo,
   getUsuario,
-  getUsuarioPorId,
-  getTotalDisponibles
+  getUsuarioPorId
   // crearUsuario,
   // actualizarUsuario,
   // eliminarUsuario

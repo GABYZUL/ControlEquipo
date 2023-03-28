@@ -9,10 +9,11 @@ import { PrincipalComponent } from './principal.component';
 import { LoginComponent } from '../login/inicio/login/login.component';
 import { DisponibilidaddiariaComponent } from './paginas/admin/disponibilidaddiaria/disponibilidaddiaria.component';
 import { EquiposvisitanteComponent } from './paginas/visitante/equiposvisitante/equiposvisitante/equiposvisitante.component';
+import { RutasProtegidasGuard } from 'src/app/core/permisosRutas/rutas-protegidas.guard';
 
 const rutas: Routes = [
   {path:'', component:LoginComponent},
-  {path:'administrador',  component: PrincipalComponent, canActivate:[PermisosRutasService],
+  {path:'administrador',  component: PrincipalComponent, canActivate:[RutasProtegidasGuard], data:{expectedRole:'Administrador'},
   children:[
     {path:'equipos', component: EquiposComponent, },
     {path:'administrador', component: EquiposComponent},
@@ -27,13 +28,10 @@ const rutas: Routes = [
   ]
 
 },
-{path:'visitante',  component: PrincipalComponent, canActivate:[PermisosRutasService],
+{path:'visitante',  component: PrincipalComponent, canActivate:[RutasProtegidasGuard], data:{expectedRole:'Visitante'},
   children:[
 
-    {path:'equiposvisitante', component: EquiposvisitanteComponent},
-    {path:'valorequipos', component: ValorequiposComponent},
-    {path:'checklist', component:ChecklistComponent},
-    {path:'disponibilidaddiaria', component: DisponibilidaddiariaComponent}
+    {path:'equiposvisitante', component: EquiposvisitanteComponent}
 
   ]
 

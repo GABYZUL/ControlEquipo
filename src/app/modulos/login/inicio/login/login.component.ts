@@ -59,7 +59,6 @@ export class LoginComponent {
             }
           }else{
             alert("Usuario o contraseña incorrectos");
-            console.log("VIENTOS")
           }
         },
         error:(err)=>{
