@@ -31,7 +31,6 @@ import { NgChartsModule } from 'ng2-charts';
 
 
 // CONTROL EQUIPOS DIALOGOS
-import { FormComponent } from './components/form/form.component';
 import { NopermitidoComponent } from './nopermitido/nopermitido.component';
 
 
@@ -39,7 +38,6 @@ import { NopermitidoComponent } from './nopermitido/nopermitido.component';
 @NgModule({
   declarations: [
     AppComponent,
-  FormComponent,
   SesionesComponent,
   NopermitidoComponent,
   ],

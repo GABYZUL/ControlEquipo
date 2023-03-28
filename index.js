@@ -60,4 +60,3 @@ app.get('/usuarios/:numtrabajador',db.getUsuarioPorId)
 
 app.listen(port, ()=>{console.log(`APP running in port ${port}.`)
 })
-

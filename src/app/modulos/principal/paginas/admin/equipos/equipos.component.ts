@@ -8,7 +8,7 @@ import { MatSort } from '@angular/material/sort';
 import { ApiequiposService } from 'src/app/services/servicesce/apiequipos.service';
 import { DialogeditarComponent } from './elementos/dialogeditar/dialogeditar/dialogeditar.component';
 import { DialogdetalleComponent } from './elementos/dialogdetalle/dialogdetalle/dialogdetalle.component';
-
+import { AfterViewInit } from '@angular/core';
 
 
 
@@ -20,6 +20,7 @@ import { DialogdetalleComponent } from './elementos/dialogdetalle/dialogdetalle/
 export class EquiposComponent implements OnInit {
   title = 'Equipos';
   displayedColumns: string[] = [
+    'id',
     'noeco',
     'tipoequipo',
     'unidad',
@@ -37,6 +38,11 @@ export class EquiposComponent implements OnInit {
   dataSource !: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
 
   constructor(private dialog: MatDialog, private api: ApiequiposService) { }
 
@@ -74,21 +80,22 @@ export class EquiposComponent implements OnInit {
         this.getAllEquipos();
       },
       error: () => {
-        alert("Equipo eliminado!")
-        window.location.reload();
+        alert("Recargando la pagina")
+        window.location.reload()
       }
     })
   }
   editEquipo(row:any) {
     this.dialog.open(DialogeditarComponent, {
       width: '50%',
-      data: row
+      data: row // pasar el objeto completo 'row' a través de la propiedad 'editData'
     }).afterClosed().subscribe(val => {
       if (val === 'Actualizar') {
         this.getAllEquipos();
       }
-    })
+    });
   }
+
   getEquipoByid(row:any) {
     this.dialog.open(DialogdetalleComponent, {
       width: '50%',

@@ -14,58 +14,57 @@
             <mat-label>No. Eco.</mat-label>
             <input formControlName="noeco" type="text" matInput placeholder="ABC-01">
         </mat-form-field>
-
         <mat-form-field appearance="outline">
-          <mat-label>Unidad de Negocio</mat-label>
-          <mat-select formControlName="unidad">
-            <mat-option value="Depósito Veracruz">Depósito Veracruz</mat-option>
-            <mat-option value="Depósito Lazaro">Depósito Lázaro</mat-option>
-            <mat-option value="Depósito Ensenada">Depósito Ensenada</mat-option>
-            <mat-option value="Depósito Manzanillo">Depósito Manzanillo</mat-option>
-            <mat-option value="Depósito Tultepec">Depósito Tultepec</mat-option>
-            <mat-option value="SUKARGA">SUKARGA</mat-option>
-            <mat-option value="RFE">RFE</mat-option>
-          </mat-select>
-        </mat-form-field>
+            <mat-label>Unidad de Negocio</mat-label>
+            <mat-select formControlName="unidad">
+              <mat-option value="Depósito Veracruz">Depósito Veracruz</mat-option>
+              <mat-option value="Depósito Lazaro">Depósito Lázaro</mat-option>
+              <mat-option value="Depósito Ensenada">Depósito Ensenada</mat-option>
+              <mat-option value="Depósito Manzanillo">Depósito Manzanillo</mat-option>
+              <mat-option value="Depósito Tultepec">Depósito Tultepec</mat-option>
+              <mat-option value="SUKARGA">SUKARGA</mat-option>
+              <mat-option value="RFE">RFE</mat-option>
+            </mat-select>
+          </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Modelo</mat-label>
-            <input formControlName="modelo" maxlength="20" type="text" matInput placeholder="--">
+            <input formControlName="modelo"  maxlength="20" type="text" matInput placeholder="--">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Año</mat-label>
-            <input formControlName="anio" maxlength="4" type="number" matInput placeholder="0">
+            <input formControlName="anio"  maxlength="4" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Numero de serie</mat-label>
-            <input formControlName="numeroserie" maxlength="40" type="text" matInput placeholder="0">
+            <input formControlName="numeroserie"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Motor</mat-label>
-            <input formControlName="motor" type="text" maxlength="40" matInput placeholder="0">
+            <input formControlName="motor"  maxlength="20" type="text" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Serie de motor</mat-label>
-            <input formControlName="seriemotor" maxlength="40" type="text" matInput placeholder="0">
+            <input formControlName="seriemotor"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Estatus</mat-label>
             <mat-select formControlName="estatus">
-                <mat-option value="Operativo">Operativo</mat-option>
-                <mat-option value="Inoperativo">Inoperativo</mat-option>
-                <mat-option value="Desconocido">Desconocido</mat-option>
+                <mat-option value="1">Operativo</mat-option>
+                <mat-option value="2">Inoperativo</mat-option>
+                <mat-option value="3">Desconocido</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Atencion</mat-label>
-            <input formControlName="atencion" maxlength="30" type="text" matInput placeholder="0">
+            <input formControlName="atencion"  maxlength="40" type="text" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en pesos</mat-label>
-            <input formControlName="costopesos" maxlength="50" type="number" matInput placeholder="0">
+            <input formControlName="costopesos"  maxlength="20" type="text" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en dolares</mat-label>
-            <input formControlName="costodolares" maxlength="50" type="number" matInput placeholder="0">
+            <input formControlName="costodolares"  maxlength="20" type="text" matInput placeholder="0">
         </mat-form-field>
     </form>
 </div>

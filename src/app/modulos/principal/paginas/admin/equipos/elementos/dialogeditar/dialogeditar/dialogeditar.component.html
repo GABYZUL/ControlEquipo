@@ -1,13 +1,17 @@
 <h1 mat-dialog-title>Editar equipo</h1>
 <div mat-dialog-content>
-    <form [formGroup]="editarEquipoForm">
+    <form [formGroup]="editarEquipoForm" ngSubmit="submit()">
         <br>
+        <mat-form-field appearance="outline">
+            <mat-label>ID</mat-label>
+            <input formControlName="id" type="number" matInput>
+        </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Tipo de equipo</mat-label>
             <mat-select formControlName="tipoequipo">
-                <mat-option value="1">Unidad 1</mat-option>
-                <mat-option value="2">Unidad 2</mat-option>
-                <mat-option value="3">Unidad 3</mat-option>
+                <mat-option value="SideLoader">Side Loader</mat-option>
+                <mat-option value="Tractocamion">Tracto Camion</mat-option>
+                <mat-option value="Retroexcavadora">Retroexcavadora</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">
@@ -16,28 +20,28 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>Unidad de Negocio</mat-label>
-          <mat-select formControlName="unidad">
-            <mat-option value="Depósito Veracruz">Depósito Veracruz</mat-option>
-            <mat-option value="Depósito Lazaro">Depósito Lázaro</mat-option>
-            <mat-option value="Depósito Ensenada">Depósito Ensenada</mat-option>
-            <mat-option value="Depósito Manzanillo">Depósito Manzanillo</mat-option>
-            <mat-option value="Depósito Tultepec">Depósito Tultepec</mat-option>
-            <mat-option value="SUKARGA">SUKARGA</mat-option>
-            <mat-option value="RFE">RFE</mat-option>
-          </mat-select>
-        </mat-form-field>
+            <mat-label>Unidad de Negocio</mat-label>
+            <mat-select formControlName="unidad">
+              <mat-option value="Depósito Veracruz">Depósito Veracruz</mat-option>
+              <mat-option value="Depósito Lazaro">Depósito Lázaro</mat-option>
+              <mat-option value="Depósito Ensenada">Depósito Ensenada</mat-option>
+              <mat-option value="Depósito Manzanillo">Depósito Manzanillo</mat-option>
+              <mat-option value="Depósito Tultepec">Depósito Tultepec</mat-option>
+              <mat-option value="SUKARGA">SUKARGA</mat-option>
+              <mat-option value="RFE">RFE</mat-option>
+            </mat-select>
+          </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Modelo</mat-label>
-            <input formControlName="modelo" type="text" matInput placeholder="--">
+            <input formControlName="modelo"  maxlength="20" type="text" matInput placeholder="--">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Año</mat-label>
-            <input formControlName="anio" type="number" matInput placeholder="0">
+            <input formControlName="anio"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Numero de serie</mat-label>
-            <input formControlName="numeroserie" type="number" matInput placeholder="0">
+            <input formControlName="numeroserie"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Motor</mat-label>
@@ -45,7 +49,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Serie de motor</mat-label>
-            <input formControlName="seriemotor" type="number" matInput placeholder="0">
+            <input formControlName="seriemotor"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Estatus</mat-label>
@@ -61,15 +65,16 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en pesos</mat-label>
-            <input formControlName="costopesos" type="text" matInput placeholder="0">
+            <input formControlName="costopesos"  maxlength="20" type="text" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en dolares</mat-label>
-            <input formControlName="costodolares" type="text" matInput placeholder="0">
+            <input formControlName="costodolares"  maxlength="20" type="text" matInput placeholder="0">
         </mat-form-field>
     </form>
 </div>
 
 <div mat-dialog-action [align]="'end'">
     <button class="btn btn-outline-danger" mat-dialog-close>Cerrar</button>
-    <button style="margin-left: 8px;"  (click)="actualizarEquipo()" class="btn btn-outline-success">{{actionBtn}}</button>
+    <button style="margin-left: 8px;"  type="submit" (click)="actualizarEquipo()" class="btn btn-outline-success">{{actionBtn}}</button>
+</div>
