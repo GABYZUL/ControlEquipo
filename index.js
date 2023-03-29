@@ -46,7 +46,6 @@ app.get('/',(request, response)=>{
 
 app.get('/acumulado', db.getEquipo)
 app.get('/acumulado/:id', db.getEquipoById)
-app.get('/acumulado/',db.getContadorOperativos)
 app.post('/acumulado', db.crearEquipo)
 app.put('/acumulado/:id',db.actualizarEquipo)
 app.delete('/acumulado/:id', db.eliminarEquipo)
