@@ -7,13 +7,27 @@
             <input formControlName="id" type="number" matInput>
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Tipo de equipo</mat-label>
-            <mat-select formControlName="tipoequipo">
-                <mat-option value="SideLoader">Side Loader</mat-option>
-                <mat-option value="Tractocamion">Tracto Camión</mat-option>
-                <mat-option value="Retroexcavadora">Retroexcavadora</mat-option>
+          <mat-label>Tipo de equipo</mat-label>
+          <mat-select formControlName="tipoequipo">
+            <mat-option value="Reach staker">Reach staker</mat-option>
+              <mat-option value="Side loader">Side loader</mat-option>
+              <mat-option value="Tracto camion">Tracto camión</mat-option>
+              <mat-option value="Retro excavadora">Retro excavadora</mat-option>
+              <mat-option value="Cargador frontal">Cargador frontal</mat-option>
+              <mat-option value="Minicargador frontal">Minicargador frontal</mat-option>
+              <mat-option value="Montacargas">Montacargas</mat-option>
+              <mat-option value="Montacarga a gas">Montacarga a gas</mat-option>
+              <mat-option value="Montacargas eléctrico">Montacargas eléctrico</mat-option>
+              <mat-option value="Montacargas hombre parado">Montacargas hombre parado</mat-option>
+              <mat-option value="Chasis">Chasis</mat-option>
+              <mat-option value="Panameño">Panameño</mat-option>
+              <mat-option value="Plana">Plana</mat-option>
+              <mat-option value="Tolva">Tolva</mat-option>
+              <mat-option value="Voltainer">Voltainer</mat-option>
+              <mat-option value="Dolly">Dolly</mat-option>
+              <mat-option value="Almejas">Almejas</mat-option>
             </mat-select>
-        </mat-form-field>
+      </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Número económico</mat-label>
             <input formControlName="noeco" type="text" matInput placeholder="ABC-01">
@@ -36,20 +50,55 @@
             <input formControlName="modelo"  maxlength="20" type="text" matInput placeholder="--">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Año</mat-label>
-            <input formControlName="anio"  maxlength="20" type="number" matInput placeholder="0">
-        </mat-form-field>
+          <mat-label>Año</mat-label>
+          <mat-select  formControlName="anio">
+              <mat-option value="1990">1990</mat-option>
+              <mat-option value="1991">1991</mat-option>
+              <mat-option value="1992">1992</mat-option>
+              <mat-option value="1993">1993</mat-option>
+              <mat-option value="1994">1994</mat-option>
+              <mat-option value="1995">1995</mat-option>
+              <mat-option value="1996">1996</mat-option>
+              <mat-option value="1997">1997</mat-option>
+              <mat-option value="1998">1998</mat-option>
+              <mat-option value="1999">1999</mat-option>
+              <mat-option value="2000">2000</mat-option>
+              <mat-option value="2001">2001</mat-option>
+              <mat-option value="2002">2002</mat-option>
+              <mat-option value="2003">2003</mat-option>
+              <mat-option value="2004">2004</mat-option>
+              <mat-option value="2005">2005</mat-option>
+              <mat-option value="2006">2006</mat-option>
+              <mat-option value="2007">2007</mat-option>
+              <mat-option value="2008">2008</mat-option>
+              <mat-option value="2009">2009</mat-option>
+              <mat-option value="2010">2010</mat-option>
+              <mat-option value="2011">2011</mat-option>
+              <mat-option value="2012">2012</mat-option>
+              <mat-option value="2013">2013</mat-option>
+              <mat-option value="2014">2014</mat-option>
+              <mat-option value="2015">2015</mat-option>
+              <mat-option value="2016">2016</mat-option>
+              <mat-option value="2017">2017</mat-option>
+              <mat-option value="2018">2018</mat-option>
+              <mat-option value="2019">2019</mat-option>
+              <mat-option value="2020">2020</mat-option>
+              <mat-option value="2021">2021</mat-option>
+              <mat-option value="2022">2022</mat-option>
+              <mat-option value="2023">2023</mat-option>
+          </mat-select>
+      </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Número de serie</mat-label>
-            <input formControlName="numeroserie"  maxlength="20" type="number" matInput placeholder="0">
+            <input formControlName="numeroserie"  maxlength="20" type="text" matInput placeholder="00000">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Motor</mat-label>
-            <input formControlName="motor" type="text" matInput placeholder="0">
+            <input formControlName="motor" type="text" matInput placeholder="00000">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Serie de motor</mat-label>
-            <input formControlName="seriemotor"  maxlength="20" type="number" matInput placeholder="0">
+            <input formControlName="seriemotor"  maxlength="20" type="text" matInput placeholder="00000">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Estatus</mat-label>
@@ -61,15 +110,15 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Atención</mat-label>
-            <input formControlName="atencion" type="text" matInput placeholder="0">
+            <input formControlName="atencion" type="text" matInput placeholder="Mantenimiento">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en pesos</mat-label>
-            <input formControlName="costopesos"  maxlength="20" type="text" matInput placeholder="0">
+            <input formControlName="costopesos"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en dólares</mat-label>
-            <input formControlName="costodolares"  maxlength="20" type="text" matInput placeholder="0">
+            <input formControlName="costodolares"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
     </form>
 </div>
