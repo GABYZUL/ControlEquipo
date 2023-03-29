@@ -197,17 +197,20 @@
 
 
 label {
-  margin-top: 20px;
+  margin-top: 15px;
   position: absolute;
   font-size: 30px;
 }
 
+#label1{
+  margin-left: -10px;
+}
 #label2 {
-  margin-left: 30px;
+  margin-left: 15px;
 }
 
 #label3{
-  margin-left: 30px;
+  margin-left: 15px;
 }
 
 
