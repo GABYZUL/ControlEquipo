@@ -35,6 +35,10 @@ export class EquiposComponent implements OnInit {
     'accion'
   ];
 
+  estatusOperativo = "";
+  estatusInoperativo = "";
+  estatusDesconocido = "";
+
   dataSource !: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -50,6 +54,8 @@ export class EquiposComponent implements OnInit {
     this.getAllEquipos();
   }
 
+
+
   OpenDialogAgregarEquipo() {
     this.dialog.open(DialogagregarequipoComponent, {
       width: '30%',
@@ -64,6 +70,24 @@ export class EquiposComponent implements OnInit {
     this.api.getEquipo()
       .subscribe({
         next: (res) => {
+          const equiposOperativos = res.filter((equipo:unknown)=>{
+            return (equipo as any).estatus === 'Operativo';
+          });
+          const equiposInoperativos = res.filter((equipo:unknown)=>{
+            return (equipo as any).estatus === 'Inoperativo';
+          });
+          const equiposDesconocidos = res.filter((equipo:unknown)=>{
+            return (equipo as any).estatus === 'Desconocido';
+          });
+
+          const totalEquiposOperativos = equiposOperativos.length;
+          const totalEquiposInoperativos = equiposInoperativos.length;
+          const totalEquiposDesconocidos = equiposDesconocidos.length;
+
+          this.estatusOperativo = totalEquiposOperativos;
+          this.estatusInoperativo = totalEquiposInoperativos;
+          this.estatusDesconocido = totalEquiposDesconocidos;
+
           this.dataSource = new MatTableDataSource(res);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
@@ -73,6 +97,7 @@ export class EquiposComponent implements OnInit {
         }
       })
   }
+
   eliminarEquipo(id:number) {
       this.api.eliminarEquipo(id).subscribe({
       next: (res) => {
