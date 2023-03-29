@@ -30,7 +30,6 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Número económico</mat-label>
-            <mat-label>Número económico</mat-label>
             <input formControlName="noeco" type="text" matInput placeholder="ABC-01">
         </mat-form-field>
         <mat-form-field appearance="outline">
@@ -49,10 +48,45 @@
             <mat-label>Modelo</mat-label>
             <input formControlName="modelo"  maxlength="20" type="text" matInput placeholder="--">
         </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label for="year">Año</mat-label>
-            <input formControlName="anio" id="year" name="year" min="1900" max="2023" type="date" matInput placeholder="0">
-        </mat-form-field>
+      </mat-form-field>
+      <mat-label>Año</mat-label>
+      <mat-select formControlName="anio">
+          <mat-option value="1990">1990</mat-option>
+          <mat-option value="1991">1991</mat-option>
+          <mat-option value="1992">1992</mat-option>
+          <mat-option value="1993">1993</mat-option>
+          <mat-option value="1994">1994</mat-option>
+          <mat-option value="1995">1995</mat-option>
+          <mat-option value="1996">1996</mat-option>
+          <mat-option value="1997">1997</mat-option>
+          <mat-option value="1998">1998</mat-option>
+          <mat-option value="1999">1999</mat-option>
+          <mat-option value="2000">2000</mat-option>
+          <mat-option value="2001">2001</mat-option>
+          <mat-option value="2002">2002</mat-option>
+          <mat-option value="2003">2003</mat-option>
+          <mat-option value="2004">2004</mat-option>
+          <mat-option value="2005">2005</mat-option>
+          <mat-option value="2006">2006</mat-option>
+          <mat-option value="2007">2007</mat-option>
+          <mat-option value="2008">2008</mat-option>
+          <mat-option value="2009">2009</mat-option>
+          <mat-option value="2010">2010</mat-option>
+          <mat-option value="2011">2011</mat-option>
+          <mat-option value="2012">2012</mat-option>
+          <mat-option value="2013">2013</mat-option>
+          <mat-option value="2014">2014</mat-option>
+          <mat-option value="2015">2015</mat-option>
+          <mat-option value="2016">2016</mat-option>
+          <mat-option value="2017">2017</mat-option>
+          <mat-option value="2018">2018</mat-option>
+          <mat-option value="2019">2019</mat-option>
+          <mat-option value="2020">2020</mat-option>
+          <mat-option value="2021">2021</mat-option>
+          <mat-option value="2022">2022</mat-option>
+          <mat-option value="2023">2023</mat-option>
+      </mat-select>
+  </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Número de serie</mat-label>
             <input formControlName="numeroserie"  maxlength="20" type="number" matInput placeholder="0">
