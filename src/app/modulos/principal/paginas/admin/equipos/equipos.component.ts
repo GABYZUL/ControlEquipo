@@ -20,7 +20,7 @@ import { AfterViewInit } from '@angular/core';
 export class EquiposComponent implements OnInit {
   title = 'Equipos';
   displayedColumns: string[] = [
-    'id',
+    // 'id',
     'noeco',
     'tipoequipo',
     'unidad',
@@ -32,12 +32,18 @@ export class EquiposComponent implements OnInit {
     'seriemotor',
     'costopesos',
     'costodolares',
+    'fechacreacion',
+    'fechaactualizacion',
+    'nombreagrega',
+    'nombreactualiza',
     'accion'
   ];
 
   estatusOperativo = "";
   estatusInoperativo = "";
   estatusDesconocido = "";
+  anioCreacion = "";
+  anioActualizacion ="";
 
   dataSource !: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -79,7 +85,7 @@ export class EquiposComponent implements OnInit {
           const equiposDesconocidos = res.filter((equipo:unknown)=>{
             return (equipo as any).estatus === 'Desconocido';
           });
-
+          
           const totalEquiposOperativos = equiposOperativos.length;
           const totalEquiposInoperativos = equiposInoperativos.length;
           const totalEquiposDesconocidos = equiposDesconocidos.length;
@@ -97,7 +103,7 @@ export class EquiposComponent implements OnInit {
         }
       })
   }
-
+  
   eliminarEquipo(id:number) {
       this.api.eliminarEquipo(id).subscribe({
       next: (res) => {

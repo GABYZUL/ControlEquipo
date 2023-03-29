@@ -19,6 +19,8 @@ export class LoginComponent {
     tipoUsuario: ''
   }
 
+  // nombreUsuario = '';
+
   public myForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private loginPrd: AutentificacionService,
@@ -46,11 +48,15 @@ export class LoginComponent {
           if(usuario == userData.numtrabajador && password == userData.contra){
             const tokenData = {
               usuario: userData.numtrabajador,
-              tipo: userData.tipoUsuario
+              tipo: userData.tipoUsuario,
+              nombre: userData.name
             };
             const token = this.signToken(tokenData, '');
             console.log('token', token);
             sessionStorage.setItem('token', JSON.stringify(token));
+
+            // this.nombreUsuario = userData.nombre;
+            // console.log(this.nombreUsuario)
 
             if(userData.tipoUsuario == "Administrador"){
               this.routerprd.navigateByUrl("/administrador/equipos")

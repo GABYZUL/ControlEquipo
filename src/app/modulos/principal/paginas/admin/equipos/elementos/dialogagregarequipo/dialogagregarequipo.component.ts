@@ -29,7 +29,8 @@ export class DialogagregarequipoComponent implements OnInit {
       estatus: ['', Validators.required],
       atencion: ['', Validators.required],
       costopesos: ['', Validators.required],
-      costodolares: ['', Validators.required]
+      costodolares: ['', Validators.required],
+      nombreagrega: ['', Validators.required]
     })
     if(this.editData){
       this.agregarequipoForm.controls['id'].setValue(this.editData.id);
@@ -45,7 +46,7 @@ export class DialogagregarequipoComponent implements OnInit {
         this.agregarequipoForm.controls['atencion'].setValue(this.editData.atencion);
         this.agregarequipoForm.controls['costopesos'].setValue(this.editData.costopesos);
         this.agregarequipoForm.controls['costodolares'].setValue(this.editData.costodolares);
-
+        this.agregarequipoForm.controls['nombreagrega'].setValue(this.editData.nombreagrega);
     }
 
   }

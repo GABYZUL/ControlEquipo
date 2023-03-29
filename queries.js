@@ -33,11 +33,11 @@ const getEquipoById = (request, response) =>{
 };
 
   const crearEquipo = (request, response) => {
-  const { tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares } = request.body;
+  const { nombreagrega, tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares } = request.body;
 
   pool.query(
-    "INSERT INTO acumulado (tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *",
-    [ tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares],
+    "INSERT INTO acumulado (nombreagrega, tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *",
+    [ nombreagrega, tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares],
     (error, result) =>{
       if (error){
         throw error;
@@ -49,11 +49,10 @@ const getEquipoById = (request, response) =>{
 
 const actualizarEquipo = (request, response) => {
   const id = parseInt(request.params.id);
-  const { tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares } = request.body;
-  console.log(tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares, id)
+  const { nombreactualiza, tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares } = request.body;
   pool.query(
-    "UPDATE acumulado SET tipoequipo = $1, noeco = $2, unidad = $3, modelo = $4, anio = $5, numeroserie = $6, motor = $7, seriemotor = $8, estatus = $9, atencion = $10, costopesos = $11, costodolares = $12 WHERE id = $13 RETURNING * ",
-    [tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares, id],
+    "UPDATE acumulado SET fechaactualizacion = 'now()', tipoequipo = $1, noeco = $2, unidad = $3, modelo = $4, anio = $5, numeroserie = $6, motor = $7, seriemotor = $8, estatus = $9, atencion = $10, costopesos = $11, costodolares = $12, nombreactualiza = $13 WHERE id = $14 RETURNING * ",
+    [tipoequipo, noeco, unidad, modelo, anio, numeroserie, motor, seriemotor, estatus, atencion, costopesos, costodolares, nombreactualiza,id],
     (error, result) => {
       if (error) {
         throw error;

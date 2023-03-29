@@ -29,7 +29,8 @@ export class DialogeditarComponent implements OnInit{
         estatus: ['', Validators.required],
         atencion: ['', Validators.required],
         costopesos: ['', Validators.required],
-        costodolares: ['', Validators.required]
+        costodolares: ['', Validators.required],
+        nombreactualiza: ['', Validators.required]
       })
       if(this.data){
         this.editarEquipoForm.controls['id'].setValue(this.data.id);
@@ -45,6 +46,7 @@ export class DialogeditarComponent implements OnInit{
         this.editarEquipoForm.controls['atencion'].setValue(this.data.atencion);
         this.editarEquipoForm.controls['costopesos'].setValue(this.data.costopesos);
         this.editarEquipoForm.controls['costodolares'].setValue(this.data.costodolares);
+        this.editarEquipoForm.controls['nombreactualiza'].setValue(this.data.nombreactualiza);
       }
     }
     

@@ -53,10 +53,10 @@
   <section class="example-container mat-elevation-z8" tabindex="0">
     <table mat-table [dataSource]="dataSource" matSort>
 
-      <ng-container matColumnDef="id" >
+      <!-- <ng-container matColumnDef="id" >
         <th mat-header-cell style="background-color: #3b8c88;"   *matHeaderCellDef mat-sort-header> Id Equipo </th>
         <td mat-cell style="background-color: #aeaeae;"  *matCellDef="let row"> {{row.id}} </td>
-      </ng-container>
+      </ng-container> -->
       <ng-container matColumnDef="noeco" sticky>
         <th mat-header-cell style="background-color: #3b8c88;"   *matHeaderCellDef mat-sort-hea der>Número económico</th>
         <td mat-cell style="background-color: #aeaeae;" *matCellDef="let row"> {{row.noeco}} </td>
@@ -100,6 +100,22 @@
       <ng-container matColumnDef="costodolares">
         <th mat-header-cell style="background-color: #3b8c88ac;"   *matHeaderCellDef mat-sort-header> Costo en Dólares</th>
         <td mat-cell  *matCellDef="let row"> {{row.costodolares}} </td>
+      </ng-container>
+      <ng-container matColumnDef="fechacreacion">
+        <th mat-header-cell style="background-color: #3b8c88ac;"   *matHeaderCellDef mat-sort-header> Año de adquisición</th>
+        <td mat-cell  *matCellDef="let row"> {{row.fechacreacion}} </td>
+      </ng-container>
+      <ng-container matColumnDef="fechaactualizacion">
+        <th mat-header-cell style="background-color: #3b8c88ac;"   *matHeaderCellDef mat-sort-header> Año de actualización</th>
+        <td mat-cell  *matCellDef="let row"> {{row.fechaactualizacion}}</td>
+      </ng-container>
+      <ng-container matColumnDef="nombreagrega">
+        <th mat-header-cell style="background-color: #3b8c88ac;"   *matHeaderCellDef mat-sort-header> Nombre quien agregó</th>
+        <td mat-cell  *matCellDef="let row"> {{row.nombreagrega}} </td>
+      </ng-container>
+      <ng-container matColumnDef="nombreactualiza">
+        <th mat-header-cell style="background-color: #3b8c88ac;"   *matHeaderCellDef mat-sort-header> Nombre quien actualizó</th>
+        <td mat-cell  *matCellDef="let row"> {{row.nombreactualiza}}</td>
       </ng-container>
       <ng-container matColumnDef="accion" stickyEnd>
         <th mat-header-cell style="background-color: #3b8c88;"   *matHeaderCellDef mat-sort-header> Acciones </th>
