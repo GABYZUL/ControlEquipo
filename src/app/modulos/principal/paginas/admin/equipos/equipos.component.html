@@ -88,11 +88,11 @@
       </ng-container>
       <ng-container matColumnDef="costopesos">
         <th mat-header-cell style="background-color: #3b8c88ac;"   *matHeaderCellDef mat-sort-header> Costo en Pesos</th>
-        <td mat-cell  *matCellDef="let row"> {{row.costopesos}} </td>
+        <td mat-cell  *matCellDef="let row"> {{row.costopesos | currency: 'USD' | lowercase}} </td>
       </ng-container>
       <ng-container matColumnDef="costodolares">
         <th mat-header-cell style="background-color: #3b8c88ac;"   *matHeaderCellDef mat-sort-header> Costo en Dólares</th>
-        <td mat-cell  *matCellDef="let row"> {{row.costodolares}} </td>
+        <td mat-cell  *matCellDef="let row"> {{row.costodolares | currency: 'USD' | lowercase}} </td>
       </ng-container>
       <ng-container matColumnDef="fechacreacion">
         <th mat-header-cell style="background-color: #3b8c88ac;"   *matHeaderCellDef mat-sort-header> Año de adquisición</th>
