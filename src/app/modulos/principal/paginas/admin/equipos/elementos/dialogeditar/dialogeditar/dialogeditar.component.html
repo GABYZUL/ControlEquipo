@@ -11,13 +11,27 @@
             <input formControlName="nombreactualiza"  maxlength="50" type="text" matInput placeholder="Nombre">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Tipo de equipo</mat-label>
-            <mat-select formControlName="tipoequipo">
-                <mat-option value="SideLoader">Side Loader</mat-option>
-                <mat-option value="Tractocamion">Tracto Camión</mat-option>
-                <mat-option value="Retroexcavadora">Retroexcavadora</mat-option>
+          <mat-label>Tipo de equipo</mat-label>
+          <mat-select formControlName="tipoequipo">
+            <mat-option value="Reach staker">Reach staker</mat-option>
+              <mat-option value="Side loader">Side loader</mat-option>
+              <mat-option value="Tracto camion">Tracto camión</mat-option>
+              <mat-option value="Retro excavadora">Retro excavadora</mat-option>
+              <mat-option value="Cargador frontal">Cargador frontal</mat-option>
+              <mat-option value="Minicargador frontal">Minicargador frontal</mat-option>
+              <mat-option value="Montacargas">Montacargas</mat-option>
+              <mat-option value="Montacarga a gas">Montacarga a gas</mat-option>
+              <mat-option value="Montacargas eléctrico">Montacargas eléctrico</mat-option>
+              <mat-option value="Montacargas hombre parado">Montacargas hombre parado</mat-option>
+              <mat-option value="Chasis">Chasis</mat-option>
+              <mat-option value="Panameño">Panameño</mat-option>
+              <mat-option value="Plana">Plana</mat-option>
+              <mat-option value="Tolva">Tolva</mat-option>
+              <mat-option value="Voltainer">Voltainer</mat-option>
+              <mat-option value="Dolly">Dolly</mat-option>
+              <mat-option value="Almejas">Almejas</mat-option>
             </mat-select>
-        </mat-form-field>
+      </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Número económico</mat-label>
             <input formControlName="noeco" type="text" matInput placeholder="ABC-01">
@@ -45,15 +59,15 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Número de serie</mat-label>
-            <input formControlName="numeroserie"  maxlength="20" type="number" matInput placeholder="0">
+            <input formControlName="numeroserie"  maxlength="20" type="text" matInput placeholder="00000">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Motor</mat-label>
-            <input formControlName="motor" type="text" matInput placeholder="0">
+            <input formControlName="motor" type="text" matInput placeholder="00000">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Serie de motor</mat-label>
-            <input formControlName="seriemotor"  maxlength="20" type="number" matInput placeholder="0">
+            <input formControlName="seriemotor"  maxlength="20" type="text" matInput placeholder="00000">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Estatus</mat-label>
@@ -65,15 +79,15 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Atención</mat-label>
-            <input formControlName="atencion" type="text" matInput placeholder="0">
+            <input formControlName="atencion" type="text" matInput placeholder="Mantenimiento">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en pesos</mat-label>
-            <input formControlName="costopesos"  maxlength="20" type="text" matInput placeholder="0">
+            <input formControlName="costopesos"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Costo en dólares</mat-label>
-            <input formControlName="costodolares"  maxlength="20" type="text" matInput placeholder="0">
+            <input formControlName="costodolares"  maxlength="20" type="number" matInput placeholder="0">
         </mat-form-field>
     </form>
 </div>
